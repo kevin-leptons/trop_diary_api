@@ -1,0 +1,6 @@
+[Unit]
+Description=Trop Diary API - Logging Service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/trop-diary-api start --port 8080

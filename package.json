@@ -1,0 +1,38 @@
+{
+  "name": "@trop/diary_api",
+  "version": "0.1.0",
+  "description": "Logging service API",
+  "bin": {
+    "trop-diary-api": "bin/cli.js"
+  },
+  "scripts": {
+    "test": "mocha --recursive test/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevin-leptons/trop_diary.git"
+  },
+  "keywords": [
+    "log",
+    "service",
+    "api"
+  ],
+  "author": "Kevin Leptons",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kevin-leptons/trop_diary/issues"
+  },
+  "homepage": "https://github.com/kevin-leptons/trop_diary#readme",
+  "dependencies": {
+    "@trop/async_router": "^0.2.0",
+    "@trop/dflow": "^0.2.0",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "mongodb": "^3.1.12",
+    "yargs": "^12.0.5"
+  },
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  }
+}

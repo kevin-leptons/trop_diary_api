@@ -1,0 +1,6 @@
+/dist
+/dest
+/tmp
+/node_modules
+*.swp
+*.swo
