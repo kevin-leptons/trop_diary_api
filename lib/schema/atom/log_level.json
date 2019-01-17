@@ -1,0 +1,5 @@
+{
+    "$id": "//atom/log_level",
+    "type": "string",
+    "enum": ["info", "debug", "warn", "error", "fatal"]
+}
