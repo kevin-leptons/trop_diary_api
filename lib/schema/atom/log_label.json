@@ -1,0 +1,5 @@
+{
+    "$id": "//atom/log_label",
+    "type": "string",
+    "pattern": "^[a-z0-9_]{2,16}$"
+}
