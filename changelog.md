@@ -5,6 +5,7 @@
 * Fix serveral application loading.
 * Add schemas.
 * Change default listen address to 0.0.0.0
+* Systemd service wait for network.
 
 ## v0.1.0
 

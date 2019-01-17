@@ -1,5 +1,6 @@
 [Unit]
 Description=Trop Diary API - Logging Service
+After=network.targe
 
 [Service]
 Type=simple
