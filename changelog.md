@@ -4,6 +4,7 @@
 
 * Fix serveral application loading.
 * Add schemas.
+* Change default listen address to 0.0.0.0
 
 ## v0.1.0
 

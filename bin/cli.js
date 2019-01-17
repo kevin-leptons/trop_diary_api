@@ -24,7 +24,7 @@ command('start', 'Online', (yargs) => {
     option('host', {
         describe: 'Internet address to bind on',
         type: 'string',
-        default: 'localhost'
+        default: '0.0.0.0'
     })
 }, async_cli(cli_start)).
 
