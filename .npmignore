@@ -3,7 +3,7 @@
 /tmp
 /node_modules
 /test
-/doc5
+/doc
 package-lock.json
 *.swp
 *.swo
