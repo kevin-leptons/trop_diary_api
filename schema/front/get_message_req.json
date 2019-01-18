@@ -1,0 +1,20 @@
+{
+    "$id": "//trop/front/get_message_req",
+    "params": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+            "q": {
+                "type": "string"
+            },
+            "p": {
+                "type": "integer",
+                "minimum": 1
+            },
+            "l": {
+                "type": "integer",
+                "minimum": 1
+            }
+        }
+    }
+}
