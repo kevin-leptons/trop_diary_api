@@ -8,7 +8,7 @@
 
 ### Response
 
-* schema - [//tron/front/get_root_res](../schema/front/get_root_res.json)
+* schema - [//trop/front/get_root_res](../schema/front/get_root_res.json)
 * example
 
 ```json
