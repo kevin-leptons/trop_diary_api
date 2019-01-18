@@ -2,8 +2,8 @@ const assert = require('assert')
 
 const box = require('../box')
 
-describe('schema://trop/front/get_message_req', () => {
-    let schema = '//trop/front/get_message_req#/params'
+describe('schema://trop/front/get_message_req#/query', () => {
+    let schema = '//trop/front/get_message_req#/query'
     let dflow
 
     before(async () => {
@@ -11,11 +11,11 @@ describe('schema://trop/front/get_message_req', () => {
         dflow = service.dflow
     })
 
-    it('verify(params)', async () => {
+    it('verify(query)', async () => {
         dflow.verify(schema, {})
     })
 
-    it('verify(params)', async () => {
+    it('verify(query)', async () => {
         dflow.verify(schema, {
             q: "keyword",
             p: 2,
@@ -23,7 +23,7 @@ describe('schema://trop/front/get_message_req', () => {
         })
     })
 
-    it('verify(params) => error', async () => {
+    it('verify(query) => error', async () => {
         assert.throws(() => {
             dflow.verify(schema, {
                 page: 1,

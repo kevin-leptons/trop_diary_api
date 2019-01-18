@@ -39,16 +39,14 @@ GET /message?q=hellop=2&s=8
         "level": "info",
         "message": "something happens",
         "ip": "127.0.0.1",
-        "date": "2019-01-18T08:01:20.882Z",
-        "label": null
+        "date": "2019-01-18T08:01:20.882Z"
     },
     {
         "_id": "5c4187d11263114cb890ce64",
         "level": "warn",
         "message": "something went wrong",
         "ip": "127.0.0.1",
-        "date": "2019-01-18T08:01:21.743Z",
-        "label": null
+        "date": "2019-01-18T08:01:21.743Z"
     }
 ]
 ```

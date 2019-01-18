@@ -1,11 +1,13 @@
 {
     "$id": "//trop/front/post_message_req",
-    "type": "object",
-    "additionalProperties": false,
-    "required": ["level", "message"],
-    "properties": {
-        "level": {"$ref": "//atom/log_level"},
-        "label": {"$ref": "//atom/log_label"},
-        "message": {"$ref": "//atom/log_message"}
+    "body": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["level", "message"],
+        "properties": {
+            "level": {"$ref": "//atom/log_level"},
+            "label": {"$ref": "//atom/log_label"},
+            "message": {"$ref": "//atom/log_message"}
+        }
     }
 }

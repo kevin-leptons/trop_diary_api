@@ -2,8 +2,8 @@ const assert = require('assert')
 
 const box = require('../box')
 
-describe('schema://trop/front/post_message_req', () => {
-    let schema = '//trop/front/post_message_req'
+describe('schema://trop/front/post_message_req#/body', () => {
+    let schema = '//trop/front/post_message_req#/body'
     let dflow
 
     before(async () => {

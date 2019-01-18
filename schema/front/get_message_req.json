@@ -1,6 +1,6 @@
 {
     "$id": "//trop/front/get_message_req",
-    "params": {
+    "query": {
         "type": "object",
         "additionalProperties": false,
         "properties": {
