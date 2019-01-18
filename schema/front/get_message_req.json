@@ -11,7 +11,7 @@
                 "type": "integer",
                 "minimum": 1
             },
-            "l": {
+            "s": {
                 "type": "integer",
                 "minimum": 1
             }
