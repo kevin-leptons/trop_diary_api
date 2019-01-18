@@ -18,5 +18,4 @@ trop-diary-api start --port 8080
 
 * [Changelog](changelog.md)
 * [Contribution](contribution.md)
-* [APIs](doc/api.md)
-* [Development](doc/dev.md)
+* [Documents](doc/index.md)
