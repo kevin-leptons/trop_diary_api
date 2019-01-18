@@ -1,6 +1,8 @@
+const supertest = require('supertest')
 const {App} = require('../lib')
 
-let _app = null
+let _app
+let _request
 
 async function get_app() {
     if (!_app) {
@@ -8,6 +10,15 @@ async function get_app() {
         await _app._init()
     }
     return _app
+}
+
+async function get_request() {
+    if (!_request) {
+        let app = await get_app()
+        _request = supertest(app.express)
+    }
+
+    return _request
 }
 
 async function get_service() {
@@ -24,5 +35,6 @@ async function close() {
 module.exports = {
     close: close,
     app: get_app,
-    service: get_service
+    service: get_service,
+    request: get_request
 }

@@ -5,7 +5,7 @@
         "additionalProperties": false,
         "required": ["name", "version", "description", "message_count"],
         "properties": {
-            "name": {"$ref": "//atom/name#/restrict"},
+            "name": {"$ref": "//atom/name#/package"},
             "version": {"$ref": "//atom/version"},
             "description": {
                 "type": "string",
