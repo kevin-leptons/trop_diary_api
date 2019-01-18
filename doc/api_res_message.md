@@ -29,7 +29,7 @@ GET /message?q=hellop=2&s=8
 
 ### Response
 
-* schema - [//trop/front/get_message_res](../schema/front/get_message_res)
+* schema - [//trop/front/get_message_res](../schema/front/get_message_res.json)
 * example
 
 ```json
@@ -69,7 +69,7 @@ GET /message?q=hellop=2&s=8
 
 ### Response
 
-* schema - [//trop/front/post_message_res](../schema/front/post_message_res)
+* schema - [//trop/front/post_message_res](../schema/front/post_message_res.json)
 * example
 
 ```json
