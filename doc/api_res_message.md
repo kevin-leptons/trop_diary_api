@@ -35,14 +35,20 @@ GET /message?q=hellop=2&s=8
 ```json
 [
     {
-        "_id": "5c401bc545d6272171bbaa46",
+        "_id": "5c4187d01263114cb890ce63",
         "level": "info",
-        "message": "something happens"
+        "message": "something happens",
+        "ip": "127.0.0.1",
+        "date": "2019-01-18T08:01:20.882Z",
+        "label": null
     },
     {
-        "_id": "7c401bc545d6272171bbaa46",
+        "_id": "5c4187d11263114cb890ce64",
         "level": "warn",
-        "message": "something went wrong"
+        "message": "something went wrong",
+        "ip": "127.0.0.1",
+        "date": "2019-01-18T08:01:21.743Z",
+        "label": null
     }
 ]
 ```
