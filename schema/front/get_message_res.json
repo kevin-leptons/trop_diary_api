@@ -19,7 +19,7 @@
                 "date": {"$ref": "//atom/date"},
                 "level": {"$ref": "//atom/log_level"},
                 "label": {"$ref": "//atom/log_label"},
-                "message": {"$ref": "//atom/log_message"},
+                "message": {"$ref": "//atom/log_message"}
             }
         }
     }
