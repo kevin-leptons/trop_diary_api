@@ -1,4 +1,7 @@
-# Endpoint: /
+# root
+
+* endpoint - `/`
+* description - essential of system.
 
 ## GET
 
