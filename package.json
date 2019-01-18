@@ -6,7 +6,8 @@
     "trop-diary-api": "bin/cli.js"
   },
   "scripts": {
-    "test": "mocha --recursive test/"
+    "test": "mocha --recursive test/",
+    "start": "node bin/cli.js start --port 8080"
   },
   "repository": {
     "type": "git",
