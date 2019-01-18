@@ -3,7 +3,7 @@
 * endpoint - `/message`
 * description - log message
 
-## Attribute
+## Attributes
 
 * `_id` - identity
 * `ip` - internet address where write message
