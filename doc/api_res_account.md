@@ -7,7 +7,7 @@
 
 ### Request
 
-* schema - [//trop/front/post_account_req](../schema/front/post_account_req.md)
+* schema - [//trop/front/post_account_req](../schema/front/post_account_req.json)
 * example
 
 ```json

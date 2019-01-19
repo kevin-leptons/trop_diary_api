@@ -7,7 +7,7 @@
 
 ### Request
 
-* schema - [//trop/front/post_token_req](../schema/front/post_token_req.md)
+* schema - [//trop/front/post_token_req](../schema/front/post_token_req.json)
 * example
 
 ```json
