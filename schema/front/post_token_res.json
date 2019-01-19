@@ -1,4 +1,11 @@
 {
     "$id": "//trop/front/post_token_res",
-    "body": {"$ref": "//atom/jwt"}
+    "body": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["token"],
+        "properties": {
+            "token": {"$ref": "//atom/jwt"}
+        }
+    }
 }

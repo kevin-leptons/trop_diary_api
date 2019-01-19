@@ -26,8 +26,9 @@ describe('post /token', () => {
         assert.equal(res.status, 200)
         dflow.verify('//trop/front/post_token_res#/body', res.body)
 
-        let token = jwt.decode(res.body)
+        let token = jwt.decode(res.body.token)
         dflow.verify('//trop/front/token', token)
+        req.set_token(res.body.token)
     })
 
     it('req => 401', async () => {

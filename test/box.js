@@ -1,8 +1,7 @@
 const path = require('path')
 
-const supertest = require('supertest')
-
 const {App} = require('../lib')
+const Request = require('./request')
 
 let _app
 let _request
@@ -22,7 +21,7 @@ async function get_app() {
 async function get_request() {
     if (!_request) {
         let app = await get_app()
-        _request = supertest(app.express)
+        _request = new Request(app.express)
     }
 
     return _request
