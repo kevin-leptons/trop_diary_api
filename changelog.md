@@ -2,9 +2,10 @@
 
 ## v0.3.0
 
-* Add authentication buy email and password.
+* Add authentication by email and password.
 * Add authentication by token.
-* Add filter by log level, date and label.
+* [x] Add filter by log level, date and label. This features did not add
+  in this version, it is mistake.
 * Add CLI option `--clean`, clear all of data.
 * Add CLI option `--root-email`, create root account with default password.
 * Add CLI option `--pkey`, path to private key file.
