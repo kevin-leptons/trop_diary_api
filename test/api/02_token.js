@@ -19,7 +19,7 @@ describe('post /token', () => {
     it('req', async () => {
         res = await req.post(path)
             .send({
-                email: 'kevin.leptons@gmail.com',
+                email: 'root@mail.com',
                 password: 'banana'
             })
         assert.equal(res.status, 200)
@@ -27,5 +27,14 @@ describe('post /token', () => {
 
         let token = jwt.decode(res.body)
         dflow.verify('//trop/front/token', token)
+    })
+
+    it('req => 401', async () => {
+        res = await req.post(path)
+            .send({
+                email: 'root@mail.com',
+                password: 'oopssssss'
+            })
+        assert.equal(res.status, 401)
     })
 })
