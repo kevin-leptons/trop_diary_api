@@ -1,7 +1,7 @@
 # root
 
 * endpoint - `/`
-* description - essential of system.
+* description - essential information of system
 
 ## GET
 

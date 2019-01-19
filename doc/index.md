@@ -6,6 +6,8 @@
 * Authentication
 * Resources
     * [root](api_res_root.md)
+    * [token](api_res_token.md)
+    * [account](api_res_account.md)
     * [message](api_res_message.md)
 
 ## Development
