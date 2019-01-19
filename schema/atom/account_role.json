@@ -1,0 +1,5 @@
+{
+    "$id": "//atom/account_role",
+    "type": "string",
+    "enum": ["root", "r", "w", "rw"]
+}

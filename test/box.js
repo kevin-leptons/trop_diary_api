@@ -1,4 +1,7 @@
+const path = require('path')
+
 const supertest = require('supertest')
+
 const {App} = require('../lib')
 
 let _app
@@ -6,7 +9,9 @@ let _request
 
 async function get_app() {
     if (!_app) {
-        _app = new App()
+        _app = new App({
+            private_key: path.join(__dirname, '../cert/private.pem')
+        })
         await _app._init()
     }
     return _app

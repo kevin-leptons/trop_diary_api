@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.3.0
+
+* Add authentication buy email and password.
+* Add authentication by token.
+* Add authentication by API Key.
+* Add filter by log level, date and label.
+
 ## v0.2.0
 
 * Fix serveral application loading.

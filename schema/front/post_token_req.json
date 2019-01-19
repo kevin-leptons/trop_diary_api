@@ -1,0 +1,11 @@
+{
+    "$id": "//trop/front/post_token_req",
+    "body": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+            "email": {"$ref": "//atom/email"},
+            "password": {"$ref": "//atom/password"}
+        }
+    }
+}

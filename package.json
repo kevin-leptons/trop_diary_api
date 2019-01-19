@@ -7,7 +7,7 @@
   },
   "scripts": {
     "test": "mocha --recursive test/",
-    "start": "node bin/cli.js start --port 8080"
+    "start": "node bin/cli.js start --port 8080 --pkey cert/private.pem"
   },
   "repository": {
     "type": "git",
@@ -27,14 +27,16 @@
   "dependencies": {
     "@trop/async_router": "^0.2.0",
     "@trop/dflow": "^0.2.0",
+    "bcrypt": "^3.0.3",
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
     "express": "^4.16.4",
+    "jsonwebtoken": "^8.4.0",
     "mongodb": "^3.1.12",
-    "supertest": "^3.4.1",
     "yargs": "^12.0.5"
   },
   "devDependencies": {
-    "mocha": "^5.2.0"
+    "mocha": "^5.2.0",
+    "supertest": "^3.4.1"
   }
 }

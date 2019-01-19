@@ -1,0 +1,4 @@
+{
+    "$id": "//trop/front/post_token_res",
+    "body": {"$ref": "//atom/jwt"}
+}

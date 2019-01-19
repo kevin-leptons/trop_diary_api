@@ -25,6 +25,11 @@ command('start', 'Online', (yargs) => {
         describe: 'Internet address to bind on',
         type: 'string',
         default: '0.0.0.0'
+    }).
+    option('pkey', {
+        describe: 'Path to private key',
+        type: 'string',
+        demand: true
     })
 }, async_cli(cli_start)).
 
@@ -45,7 +50,8 @@ function async_cli(async_fn) {
 
 async function cli_start(conf) {
     let app = new App({
-        store: conf.store
+        store: conf.store,
+        private_key: conf.pkey
     })
     await app.start(conf.port, conf.host)
 }

@@ -1,0 +1,10 @@
+{
+    "$id": "//trop/front/post_account_res",
+    "body": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+            "_id": {"$ref": "//atom/object_id"}
+        }
+    }
+}
