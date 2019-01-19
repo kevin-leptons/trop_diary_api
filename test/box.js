@@ -10,7 +10,9 @@ let _request
 async function get_app() {
     if (!_app) {
         _app = new App({
-            private_key: path.join(__dirname, '../cert/private.pem')
+            private_key: path.join(__dirname, '../cert/private.pem'),
+            root_email: 'root@mail.com',
+            clean: true
         })
         await _app._init()
     }

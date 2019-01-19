@@ -20,8 +20,9 @@ describe('post /token', () => {
         res = await req.post(path)
             .send({
                 email: 'root@mail.com',
-                password: 'banana'
+                password: 'goddamnit'
             })
+
         assert.equal(res.status, 200)
         dflow.verify('//trop/front/post_token_res#/body', res.body)
 

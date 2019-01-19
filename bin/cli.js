@@ -30,6 +30,15 @@ command('start', 'Online', (yargs) => {
         describe: 'Path to private key',
         type: 'string',
         demand: true
+    }).
+    option('root-email', {
+        describe: 'To create root account with default password',
+        type: 'string'
+    }).
+    option('clean', {
+        describe: 'Clear all data',
+        type: 'boolean',
+        default: false
     })
 }, async_cli(cli_start)).
 
@@ -51,7 +60,9 @@ function async_cli(async_fn) {
 async function cli_start(conf) {
     let app = new App({
         store: conf.store,
-        private_key: conf.pkey
+        private_key: conf.pkey,
+        root_email: conf.rootEmail,
+        clean: conf.clean
     })
     await app.start(conf.port, conf.host)
 }

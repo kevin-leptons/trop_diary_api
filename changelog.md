@@ -6,6 +6,9 @@
 * Add authentication by token.
 * Add authentication by API Key.
 * Add filter by log level, date and label.
+* Add CLI option `--clean`, clear all of data.
+* Add CLI option `--root-email`, create root account with default password.
+* Add CLI option `--pkey`, path to private key file.
 
 ## v0.2.0
 
