@@ -1,9 +1,12 @@
 # account
 
 * endpoint - `/account`
+* authentication - `yes`
 * description - account in system
 
 ## POST
+
+* authorization - `root`
 
 ### Request
 

@@ -1,6 +1,7 @@
 # token
 
 * endpoint - `/token`
+* authentication - `no`
 * description - token for authentication and authorization
 
 ## POST

@@ -1,6 +1,7 @@
 # message
 
 * endpoint - `/message`
+* authentication - `yes`
 * description - log message
 
 ## Attributes
@@ -13,6 +14,8 @@
 * `message` - content of message
 
 ## GET
+
+* authorization - `root`, `r`
 
 ### Request
 
@@ -52,6 +55,8 @@ GET /message?q=hellop=2&s=8
 ```
 
 ## POST
+
+* authorization - `root`, `w`
 
 ### Request
 

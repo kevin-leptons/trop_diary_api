@@ -1,6 +1,7 @@
 # root
 
 * endpoint - `/`
+* authentication - `no`
 * description - essential information of system
 
 ## GET
