@@ -4,4 +4,4 @@ After=network.targe
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/trop-diary-api start --port 8080
+ExecStart=/usr/bin/trop-diary-api start --port 8080 --pkey /etc/trop_diary_api/private.pem
