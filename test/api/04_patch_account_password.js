@@ -68,4 +68,14 @@ describe('patch /account/password', () => {
         })
         assert.equal(res.status, 401)
     })
+
+    it('req, invalid old_password => 401', async () => {
+        res = await req.patch(path).
+        send({
+            email: 'root@mail.com',
+            old_password: 'jlkdsjflkasdjflksdj',
+            new_password: 'motherfucker'
+        })
+        assert.equal(res.status, 401)
+    })
 })
