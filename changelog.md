@@ -2,7 +2,8 @@
 
 ## v0.5.0
 
-* Add filter by `log_level`, `date` and `label` on log message.
+* Fix filter `q` and `p` o log message resource.
+* Add filter by `log_level`, `date` and `label` on log message resource.
 
 ## v0.4.0
 
