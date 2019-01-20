@@ -3,7 +3,11 @@
 ## v0.4.0
 
 * Change `POST /token` interface, support create token from password and
-  refresh_token.
+  refresh_token
+* Add `GET /account`
+* Add `PATCH /account/password`
+* Add `PATCH /account/role`
+* Add `DELETE /account/item/:id`
 
 ## v0.3.0
 
