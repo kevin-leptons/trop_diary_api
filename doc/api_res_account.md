@@ -116,6 +116,7 @@ GET /account&q=mail&p=2
 
 ```json
 {
+    "email": "someone@mail.com",
     "role": "rw"
 }
 ```
