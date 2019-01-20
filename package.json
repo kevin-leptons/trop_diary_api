@@ -7,7 +7,7 @@
   },
   "scripts": {
     "test": "mocha --recursive test/",
-    "start": "node bin/cli.js start --port 8080 --pkey cert/private.pem --root-email root@mail.com --clean"
+    "start": "node bin/cli.js start --port 8080 --pkey cert/private.pem --root-email root@mail.com"
   },
   "repository": {
     "type": "git",
