@@ -2,7 +2,7 @@
 
 ## APIs
 
-* Error Handling
+* [Status Code](api_status_code)
 * Authentication
 * Resources
     * [root](api_res_root.md)
