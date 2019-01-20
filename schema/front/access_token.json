@@ -1,5 +1,5 @@
 {
-    "$id": "//trop/front/token",
+    "$id": "//trop/front/access_token",
     "type": "object",
     "additionalProperties": false,
     "required": ["role", "iat", "exp", "iss", "sub"],

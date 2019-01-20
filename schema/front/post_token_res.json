@@ -3,15 +3,14 @@
     "body": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["token"],
+        "required": ["type", "expires_in", "access_token", "refresh_token"],
         "properties": {
             "type": {
-                "type": "string",
-                "pattern": "^bearer$"
+                "enum": ["bearer"]
             },
             "expires_in": {"$ref": "//atom/uint"},
             "access_token": {"$ref": "//atom/jwt"},
-            "refresh_token": {"$ref": "//trop/front/refresh_token"}
+            "refresh_token": {"$ref": "//atom/uuidv4"}
         }
     }
 }

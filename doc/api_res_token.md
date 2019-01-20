@@ -27,9 +27,9 @@
 ```json
 {
     "type": "bearer",
-    "expires_in": 20,
-    "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2x...",
-    "refresh_token": "7fd15938c823cf58e78019bea2af142f9449696a"
+    "expires_in": 14400,
+    "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+    "refresh_token": "2619ad6d-cbb1-4fdd-9fca-70652b87276f"
 }
 ```
 * `type` - type of token, always is `bearer`
@@ -53,7 +53,7 @@
 ```json
 {
     "grant_type": "refresh_token",
-    "refresh_token": "7fd15938c823cf58e78019bea2af142f9449696a"
+    "refresh_token": "2619ad6d-cbb1-4fdd-9fca-70652b87276f"
 }
 ```
 ### Response
