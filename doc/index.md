@@ -2,8 +2,8 @@
 
 ## APIs
 
-* [Status Code](api_status_code)
-* Authentication
+* [Status Code](api_status_code.md)
+* [Auth](api_auth.md)
 * Resources
     * [root](api_res_root.md)
     * [token](api_res_token.md)
