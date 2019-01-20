@@ -13,7 +13,7 @@
 
 * Add authentication by email and password.
 * Add authentication by token.
-* [x] Add filter by log level, date and label. This features did not add
+* [X] Add filter by log level, date and label. This features did not add
   in this version, it is mistake.
 * Add CLI option `--clean`, clear all of data.
 * Add CLI option `--root-email`, create root account with default password.
