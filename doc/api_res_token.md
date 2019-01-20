@@ -41,7 +41,7 @@
     * `exp`, datetime which it is expired
     * `iss`, who is created token
     * `sub`, account identity
-* `refresh_token` - [//trop/front/refresh_token](../schema/front/refresh_token), a short token to get new token
+* `refresh_token` - [//trop/front/refresh_token](../schema/front/refresh_token.json), a short token to get new token
 
 ## POST, grant_type=refresh_token
 
