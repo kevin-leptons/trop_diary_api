@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.4.0
+
+* Change `POST /token` interface, support create token from password and
+  refresh_token.
+
 ## v0.3.0
 
 * Add authentication by email and password.
