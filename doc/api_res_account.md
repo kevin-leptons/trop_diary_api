@@ -93,7 +93,8 @@ GET /account&q=mail&p=2
 ## PATCH /role
 
 * authorization - `root`
-* description - change account's role
+* description - change account's role, granted token still is valid for about
+  4 hours
 
 ### Request
 
@@ -112,8 +113,9 @@ GET /account&q=mail&p=2
 
 ## DELETE /item/:id
 
-* Remove account from system
-* However, granted token still activate around 4 hours
+* authorization - `root`
+* description - change account's role, granted token still is valid for about
+  4 hours
 
 ### Request
 
