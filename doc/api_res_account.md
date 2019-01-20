@@ -114,7 +114,7 @@ GET /account&q=mail&p=2
 ## DELETE /item/:id
 
 * authorization - `root`
-* description - change account's role, granted token still is valid for about
+* description - remove an account, granted token still is valid for about
   4 hours
 
 ### Request
