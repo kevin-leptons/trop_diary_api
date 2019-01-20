@@ -5,7 +5,13 @@
         "additionalProperties": false,
         "required": ["token"],
         "properties": {
-            "token": {"$ref": "//atom/jwt"}
+            "type": {
+                "type": "string",
+                "pattern": "^bearer$"
+            },
+            "expires_in": {"$ref": "//atom/uint"},
+            "access_token": {"$ref": "//atom/jwt"},
+            "refresh_token": {"$ref": "//trop/front/refresh_token"}
         }
     }
 }

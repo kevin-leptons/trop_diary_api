@@ -1,0 +1,5 @@
+{
+    "$id": "//trop/front/refresh_token",
+    "type": "string",
+    "pattern": "^[a-z0-9]{32}$"
+}

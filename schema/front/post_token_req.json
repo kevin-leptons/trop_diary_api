@@ -1,11 +1,32 @@
 {
     "$id": "//trop/front/post_token_req",
     "body": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-            "email": {"$ref": "//atom/email"},
-            "password": {"$ref": "//atom/password"}
-        }
+        "$oneOf": [
+            {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["grant_type", "username", "password"],
+                "properties": {
+                    "grant_type": {
+                        "type": "string",
+                        "pattern": "^password$"
+                    },
+                    "username": {"$ref": "//atom/email"},
+                    "password": {"$ref": "//atom/password"}
+                }
+            },
+            {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["grant_type", "refresh_token"],
+                "properties": {
+                    "grant_type": {
+                        "type": "string",
+                        "pattern": "^refresh_token$"
+                    },
+                    "refresh_token": {"$ref": "//atom/refresh_token"}
+                }
+            }
+        ]
     }
 }
