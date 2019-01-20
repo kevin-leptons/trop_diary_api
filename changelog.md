@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.5.0
+
+* Add filter by `log_level`, `date` and `label` on log message.
+
 ## v0.4.0
 
 * Change `POST /token` interface, support create token from password and
