@@ -1,0 +1,11 @@
+{
+    "$id": "//trop/front/get_account_req",
+    "query": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+            "q": {"$ref": "//atom/keyword"},
+            "p": {"$ref": "//atom/pint"}
+        }
+    }
+}

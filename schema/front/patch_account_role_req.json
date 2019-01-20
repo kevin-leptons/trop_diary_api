@@ -1,0 +1,11 @@
+{
+    "$id": "//trop/front/patch_account_role_req",
+    "body": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["role"],
+        "properties": {
+            "role": {"$ref": "//atom/account_role"}
+        }
+    }
+}
