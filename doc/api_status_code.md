@@ -1,4 +1,4 @@
-# Error Handling
+# Status Code
 
 ## 200
 
