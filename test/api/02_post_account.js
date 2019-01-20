@@ -16,11 +16,12 @@ describe('post /account', () => {
 
     it('req role=r', async () => {
         res = await req.post(path)
-            .send({
-                email: 'reader@mail.com',
-                password: 'banana',
-                role: 'r'
-            })
+        .send({
+            email: 'reader@mail.com',
+            password: 'banana',
+            role: 'r'
+        })
+        
         assert.equal(res.status, 201)
         dflow.verify('//trop/front/post_account_res#/body', res.body)
     })

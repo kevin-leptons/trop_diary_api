@@ -83,7 +83,7 @@ GET /account&q=mail&p=2
 
 ## PATCH /password
 
-* authentication - `any`
+* authorization - `no`
 * description - change password
 
 ### Request
@@ -93,6 +93,7 @@ GET /account&q=mail&p=2
 
 ```json
 {
+    "email": "root@mail.com",
     "old_password": "noob password",
     "new_password": "better password"
 }
