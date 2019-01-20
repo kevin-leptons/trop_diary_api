@@ -1,0 +1,11 @@
+{
+    "$id": "//trop/front/del_account_req",
+    "param": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["username"],
+        "properties": {
+            "username": {"$ref": "//atom/email"}
+        }
+    }
+}

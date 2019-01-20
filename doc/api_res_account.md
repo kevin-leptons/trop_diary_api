@@ -125,7 +125,7 @@ GET /account&q=mail&p=2
 
 * schema - `none`
 
-## DELETE /item/:id
+## DELETE /item/:username
 
 * authorization - `root`
 * description - remove an account, granted token still is valid for about
@@ -133,11 +133,11 @@ GET /account&q=mail&p=2
 
 ### Request
 
-* schema - `none`.
+* schema - [//trop/front/del_account_req](../schema/front/del_account_req)
 * example
 
 ```bash
-DELETE /account/item/5c42d0e4a0a798428f4c0cb0
+DELETE /account/item/reader@mail.com
 ```
 
 ### Response
