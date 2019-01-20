@@ -28,8 +28,20 @@ GET /account&q=mail&p=2
 
 ```json
 [
-    {},
-    {}
+    {
+        "_id": "5c44450ca1a01467ee3ddc12",
+        "email": "root@mail.com"
+        ,"role": "root",
+        "created": "2019-01-20T09:53:16.156Z",
+        "modified": "2019-01-20T09:53:16.156Z"
+    },
+    {
+        "_id": "5c44450ca1a01467ee3ddc15",
+        "email": "reader@mail.com",
+        "role": "r",
+        "created": "2019-01-20T09:53:16.385Z",
+        "modified": "2019-01-20T09:53:16.385Z"
+    }
 ]
 ```
 

@@ -9,6 +9,7 @@ describe('post /token', () => {
     let req
     let dflow
     let old_token
+    let old_access_token
     let path = '/token'
 
     before(async () => {
@@ -31,8 +32,10 @@ describe('post /token', () => {
 
         let access_token = jwt.decode(res.body.access_token)
         dflow.verify('//trop/front/access_token', access_token)
+
         req.set_token(res.body.access_token)
         old_token = res.body
+        old_access_token = access_token
     })
 
     it('req refresh', async () => {
@@ -45,8 +48,10 @@ describe('post /token', () => {
         assert.equal(res.status, 200)
         dflow.verify('//trop/front/post_token_res#/body', res.body)
 
-        let token = jwt.decode(res.body.access_token)
-        dflow.verify('//trop/front/access_token', token)
+        let access_token = jwt.decode(res.body.access_token)
+        dflow.verify('//trop/front/access_token', access_token)
+        assert.equal(access_token.role, old_access_token.role)
+
         req.set_token(res.body.access_token)
         old_token = res.body
     })
