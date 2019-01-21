@@ -41,18 +41,18 @@ GET /message?q=hellop=2&s=8
 ```json
 [
     {
-        "_id": "5c4187d01263114cb890ce63",
-        "level": "info",
+        "_id": "5c4592923c60a2602be9dfd1",
+        "level": 0,
         "message": "something happens",
-        "ip": "127.0.0.1",
-        "date": "2019-01-18T08:01:20.882Z"
+        "ip": "::ffff:127.0.0.1",
+        "created": 1548063378
     },
     {
-        "_id": "5c4187d11263114cb890ce64",
-        "level": "warn",
-        "message": "something went wrong",
-        "ip": "127.0.0.1",
-        "date": "2019-01-18T08:01:21.743Z"
+        "_id": "5c4592923c60a2602be9dfd2",
+        "level": 1,
+        "message": "something happens",
+        "ip": "::ffff:127.0.0.1",
+        "created": 1548063378
     }
 ]
 ```
@@ -68,7 +68,7 @@ GET /message?q=hellop=2&s=8
 
 ```json
 {
-    "level": "info",
+    "level": 0,
     "message": "something happens"
 }
 ```
