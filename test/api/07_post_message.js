@@ -64,6 +64,18 @@ describe('post /message', () => {
         dflow.verify('//trop/front/post_message_res#/body', res.body)
     })
 
+    it('req label=api', async () => {
+        res = await req.post(path).
+            send({
+                level: 0,
+                message: 'something happens',
+                label: 'api'
+            })
+
+        assert.equal(res.status, 201)
+        dflow.verify('//trop/front/post_message_res#/body', res.body)
+    })
+
     it('req label=null => 400', async () => {
         res = await req.post(path).
             send({
@@ -71,6 +83,7 @@ describe('post /message', () => {
                 message: 'something happens',
                 label: null
             })
+
         assert.equal(res.status, 400)
     })
 

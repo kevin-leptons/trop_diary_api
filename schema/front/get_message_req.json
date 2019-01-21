@@ -6,7 +6,8 @@
         "properties": {
             "p": {"$ref": "//atom/pint"},
             "ll": {"$ref": "//atom/log_level", "default": 0},
-            "ul": {"$ref": "//atom/log_level", "default": 4}
+            "ul": {"$ref": "//atom/log_level", "default": 4},
+            "l": {"$ref": "//atom/log_label"}
         }
     }
 }

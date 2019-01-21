@@ -21,7 +21,7 @@ describe('get /message', () => {
         dflow.verify('//trop/front/get_message_res#/body', res.body)
     })
 
-    it('req, lower_level=1, upper_level=2', async () => {
+    it('req, ll=1, ul=2', async () => {
         res = await req.get(path).
         query({
             ll: 1,
@@ -31,10 +31,32 @@ describe('get /message', () => {
         assert.equal(res.status, 200)
         dflow.verify('//trop/front/get_message_res#/body', res.body)
 
+        assert(res.body.length === 2)
         for (let item of res.body) {
             assert(item.level >= 1)
             assert(item.level <= 2)
         }
+    })
+
+    it('req l=api', async () => {
+        res = await req.get(path).
+        query({
+            l: 'api'
+        })
+
+        assert.equal(res.status, 200)
+        assert(res.body.length !== 0)
+        dflow.verify('//trop/front/get_message_res#/body', res.body)
+    })
+
+    it('req l=does_not_exist', async () => {
+        res = await req.get(path).
+        query({
+            l: 'does_not_exist'
+        })
+
+        assert.equal(res.status, 200)
+        assert(res.body.length === 0)
     })
 
     it('req p=1', async () => {
