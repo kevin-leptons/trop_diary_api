@@ -6,6 +6,7 @@
 * Fix filter `p` of log message resource.
 * Change `error_id` of 500 error to `log_id`.
 * Add filter by `log_level`, `date` and `label` on log message resource.
+* Add API `GET /message/item/:id`.
 
 ## v0.4.0
 
