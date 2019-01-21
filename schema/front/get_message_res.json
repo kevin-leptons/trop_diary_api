@@ -8,14 +8,14 @@
             "required": [
                 "_id",
                 "ip",
-                "date",
+                "created",
                 "level",
                 "message"
             ],
             "properties": {
                 "_id": {"$ref": "//atom/object_id"},
                 "ip": {"$ref": "//atom/ip"},
-                "date": {"$ref": "//atom/date"},
+                "created": {"$ref": "//atom/timestamp"},
                 "level": {"$ref": "//atom/log_level"},
                 "label": {"$ref": "//atom/log_label"},
                 "message": {"$ref": "//atom/log_message"}
