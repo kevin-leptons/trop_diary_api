@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.7.0
+
+* Improve error interface between APIs and clients.
+
 ## v0.6.0
 
 * None API change: Add few reference links to client CLI and Node.js
