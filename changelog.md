@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.6.0
+
+* None API change: Add few reference links to client CLI and Node.js
+
 ## v0.5.0
 
 * Remove filter `q`, `s` on `GET /message`
