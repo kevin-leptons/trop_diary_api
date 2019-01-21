@@ -4,7 +4,7 @@
 * authentication - `no`
 * description - token for authentication and authorization
 
-## POST, grant_type=password
+## POST /token, grant_type=password
 
 ### Request
 
@@ -43,7 +43,7 @@
     * `sub`, account identity
 * `refresh_token` - [//trop/front/refresh_token](../schema/front/refresh_token.json), a short token to get new token
 
-## POST, grant_type=refresh_token
+## POST /token, grant_type=refresh_token
 
 ### Request
 

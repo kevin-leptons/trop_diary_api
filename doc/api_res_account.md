@@ -4,7 +4,7 @@
 * authentication - `yes`
 * description - account in system
 
-## GET
+## GET /account
 
 * authorization - `root`
 * description - list accounts
@@ -51,7 +51,7 @@ GET /account&q=mail&p=2
 * `created`, created date
 * `modified`, last modified date
 
-## POST
+## POST /account
 
 * authorization - `root`
 * description - create a new account, a random password will be return
@@ -81,7 +81,7 @@ GET /account&q=mail&p=2
 
 * `_id` - identity of account
 
-## PATCH /password
+## PATCH /account/password
 
 * authorization - `no`
 * description - change password
@@ -103,7 +103,7 @@ GET /account&q=mail&p=2
 
 * schema - `none`
 
-## PATCH /role
+## PATCH /account/role
 
 * authorization - `root`
 * description - change account's role, granted token still is valid for about
@@ -125,7 +125,7 @@ GET /account&q=mail&p=2
 
 * schema - `none`
 
-## DELETE /item/:username
+## DELETE /account/item/:username
 
 * authorization - `root`
 * description - remove an account, granted token still is valid for about

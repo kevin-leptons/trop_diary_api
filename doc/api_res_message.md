@@ -13,7 +13,7 @@
 * `label` - group of message
 * `message` - content of message
 
-## GET
+## GET /message
 
 * authorization - `root`, `r`
 
@@ -57,7 +57,9 @@ GET /message?q=hellop=2&s=8
 ]
 ```
 
-## GET /item/:id
+## GET /message/item/:id
+
+* authorization - `root`, `r`
 
 ### Request
 
@@ -85,7 +87,7 @@ GET /message/item/5c4592923c60a2602be9dfd1
 }
 ```
 
-## POST
+## POST /message
 
 * authorization - `root`, `w`
 

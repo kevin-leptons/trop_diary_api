@@ -4,7 +4,7 @@
 * authentication - `no`
 * description - essential information of system
 
-## GET
+## GET /
 
 ### Request
 
