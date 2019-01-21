@@ -5,9 +5,11 @@ const box = require('../box')
 describe('post /message', () => {
     let req
     let dflow
+    let set_key
     let path = '/message'
 
     before(async () => {
+        set_key = box.set_key
         req = await box.request()
 
         let service = await box.service()
@@ -22,6 +24,7 @@ describe('post /message', () => {
             })
         assert.equal(res.status, 201)
         dflow.verify('//trop/front/post_message_res#/body', res.body)
+        set_key('message_id', res.body._id)
     })
 
     it('req, level=debug', async () => {

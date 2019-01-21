@@ -1,0 +1,22 @@
+{
+    "$id": "//trop/front/get_message_item_res",
+    "body": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+            "_id",
+            "ip",
+            "created",
+            "level",
+            "message"
+        ],
+        "properties": {
+            "_id": {"$ref": "//atom/object_id"},
+            "ip": {"$ref": "//atom/ip"},
+            "created": {"$ref": "//atom/timestamp"},
+            "level": {"$ref": "//atom/log_level"},
+            "label": {"$ref": "//atom/log_label"},
+            "message": {"$ref": "//atom/log_message"}
+        }
+    }
+}

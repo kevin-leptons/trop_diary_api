@@ -57,6 +57,34 @@ GET /message?q=hellop=2&s=8
 ]
 ```
 
+## GET /item/:id
+
+### Request
+
+* schema - [//trop/front/get_message_item_req](../schema/front/get_message_item_req.json)
+* example
+
+```bash
+GET /message/item/5c4592923c60a2602be9dfd1
+```
+
+* `id` - identity of message
+
+### Response
+
+* schema - [//trop/front/get_message_item_res](../schema/front/get_message_item_res.json)
+* example
+
+```json
+{
+    "_id": "5c4592923c60a2602be9dfd1",
+    "level": 0,
+    "message": "something happens",
+    "ip": "::ffff:127.0.0.1",
+    "created": 1548063378
+}
+```
+
 ## POST
 
 * authorization - `root`, `w`

@@ -5,6 +5,7 @@ const Request = require('./request')
 
 let _app
 let _request
+let _values = {}
 
 async function get_app() {
     if (!_app) {
@@ -38,8 +39,17 @@ async function close() {
     }
 }
 
+function set_key(key, value) {
+    _values[key] = value
+}
+function get_key(key) {
+    return _values[key]
+}
+
 module.exports = {
     close: close,
+    set_key: set_key,
+    get_key: get_key,
     app: get_app,
     service: get_service,
     request: get_request
