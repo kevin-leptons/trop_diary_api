@@ -14,10 +14,10 @@ describe('post /message', () => {
         dflow = service.dflow
     })
 
-    it('req', async () => {
+    it('req, level=info', async () => {
         res = await req.post(path).
             send({
-                level: 'info',
+                level: 0,
                 message: 'something happens'
             })
         assert.equal(res.status, 201)
@@ -27,7 +27,7 @@ describe('post /message', () => {
     it('req, level=debug', async () => {
         res = await req.post(path).
             send({
-                level: 'debug',
+                level: 1,
                 message: 'something happens'
             })
         assert.equal(res.status, 201)
@@ -37,7 +37,7 @@ describe('post /message', () => {
     it('req, level=warn', async () => {
         res = await req.post(path).
             send({
-                level: 'warn',
+                level: 2,
                 message: 'something happens'
             })
         assert.equal(res.status, 201)
@@ -47,7 +47,7 @@ describe('post /message', () => {
     it('req, level=error', async () => {
         res = await req.post(path).
             send({
-                level: 'error',
+                level: 3,
                 message: 'something happens'
             })
         assert.equal(res.status, 201)
@@ -57,7 +57,7 @@ describe('post /message', () => {
     it('req, level=fatal', async () => {
         res = await req.post(path).
             send({
-                level: 'fatal',
+                level: 4,
                 message: 'something happens'
             })
         assert.equal(res.status, 201)
@@ -67,19 +67,19 @@ describe('post /message', () => {
     it('req label=null => 400', async () => {
         res = await req.post(path).
             send({
-                level: 'info',
+                level: 0,
                 message: 'something happens',
                 label: null
             })
         assert.equal(res.status, 400)
     })
 
-    it('req additional properties => 400', async () => {
+    it('req, invalid_property=invalid => 400', async () => {
         res = await req.post(path).
             send({
-                level: 'info',
+                level: 0,
                 message: 'something happens',
-                invalid_property: 'oops'
+                invalid_property: 'invalid'
             })
         assert.equal(res.status, 400)
     })

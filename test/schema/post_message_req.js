@@ -13,14 +13,14 @@ describe('schema://trop/front/post_message_req#/body', () => {
 
     it('verify(level + message)', async () => {
         dflow.verify(schema, {
-            level: "info",
+            level: 0,
             message: "something happen"
         })
     })
 
     it('verify(level + message + label)', async () => {
         dflow.verify(schema, {
-            level: "info",
+            level: 0,
             message: "something happen",
             label: "cluster1"
         })
@@ -35,7 +35,7 @@ describe('schema://trop/front/post_message_req#/body', () => {
     it('verify(level) => error', async () => {
         assert.throws(() => {
             dflow.verify(schema, {
-                level: "info"
+                level: 0
             })
         }, Array)
     })

@@ -12,29 +12,41 @@ describe('schema://atom/log_level', () => {
     })
 
     it('verify(info)', async () => {
-        dflow.verify(schema, 'info')
+        dflow.verify(schema, 0)
     })
 
     it('verify(debug)', async () => {
-        dflow.verify(schema, 'debug')
+        dflow.verify(schema, 1)
     })
 
     it('verify(error)', async () => {
-        dflow.verify(schema, 'error')
+        dflow.verify(schema, 2)
     })
 
     it('verify(warn)', async () => {
-        dflow.verify(schema, 'warn')
+        dflow.verify(schema, 3)
     })
 
 
     it('verify(fatal)', async () => {
-        dflow.verify(schema, 'fatal')
+        dflow.verify(schema, 4)
     })
 
-    it('verify(XXXX) => error', async () => {
+    it('verify(-1) => error', async () => {
         assert.throws(() => {
-            dflow.verify(schema, 'XXXX')
+            dflow.verify(schema, -1)
+        })
+    })
+
+    it('verify(5) => error', async () => {
+        assert.throws(() => {
+            dflow.verify(schema, 5)
+        })
+    })
+
+    it('verify(string) => error', async () => {
+        assert.throws(() => {
+            dflow.verify(schema, 'info')
         })
     })
 })
