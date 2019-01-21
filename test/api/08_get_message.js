@@ -21,45 +21,66 @@ describe('get /message', () => {
         dflow.verify('//trop/front/get_message_res#/body', res.body)
     })
 
+    it('req, lower_level=1, upper_level=2', async () => {
+        res = await req.get(path).
+        query({
+            ll: 1,
+            ul: 2
+        })
+
+        assert.equal(res.status, 200)
+        dflow.verify('//trop/front/get_message_res#/body', res.body)
+
+        for (let item of res.body) {
+            assert(item.level >= 1)
+            assert(item.level <= 2)
+        }
+    })
+
     it('req p=1', async () => {
         res = await req.get(path).
-            query({
-                p: 1
-            })
+        query({
+            p: 1
+        })
+
         assert.equal(res.status, 200)
         dflow.verify('//trop/front/get_message_res#/body', res.body)
     })
 
     it('req p=1000', async () => {
         res = await req.get(path).
-            query({
-                p: 1000
-            })
+        query({
+            p: 1000
+        })
+
         assert.equal(res.status, 200)
         assert(res.body.length === 0)
     })
 
     it('req p=0', async () => {
         res = await req.get(path).
-            query({
-                p: 0
-            })
+        query({
+            p: 0
+        })
+
         assert.equal(res.status, 400)
     })
 
     it('req p=-1', async () => {
         res = await req.get(path).
-            query({
-                p: -1
-            })
+        query({
+            p: -1
+        })
+
         assert.equal(res.status, 400)
     })
 
     it('req, invlid_param=invalid => error', async () => {
         res = await req.get(path).
-            query({
-                invalid_param: 'invalid'
-            })
+        query({
+            invalid_param: 'invalid'
+        })
+
         assert.equal(res.status, 400)
     })
 })

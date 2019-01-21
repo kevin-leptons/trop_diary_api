@@ -27,6 +27,8 @@ GET /message?q=hellop=2&s=8
 ```
 
 * `p`, page index
+* `ll`, lower bound of `level`
+* `ul`, upper bound of `level`
 
 ### Response
 

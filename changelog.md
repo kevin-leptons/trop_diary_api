@@ -5,7 +5,11 @@
 * Remove filter `q`, `s` on log message resource.
 * Fix filter `p` of log message resource.
 * Change `error_id` of 500 error to `log_id`.
-* Add filter by `log_level`, `date` and `label` on log message resource.
+* Add filter by lower level as `ll` and upper level as `ul`
+  on message resource.
+* Add filter lower create date as `ld` and upper created date as `ud`
+  on message resource.
+* Add filter `label` on message resource.
 * Add API `GET /message/item/:id`.
 
 ## v0.4.0
