@@ -26,9 +26,7 @@
 GET /message?q=hellop=2&s=8
 ```
 
-* `q`, keyword for searching
 * `p`, page index
-* `s`, number of items in a page
 
 ### Response
 

@@ -17,9 +17,7 @@ describe('schema://trop/front/get_message_req#/query', () => {
 
     it('verify(query)', async () => {
         dflow.verify(schema, {
-            q: "keyword",
-            p: 2,
-            s: 8
+            p: 2
         })
     })
 

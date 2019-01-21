@@ -2,7 +2,8 @@
 
 ## v0.5.0
 
-* Fix filter `q` and `p` o log message resource.
+* Remove filter `q`, `s` on log message resource.
+* Fix filter `p` of log message resource.
 * Change `error_id` of 500 error to `log_id`.
 * Add filter by `log_level`, `date` and `label` on log message resource.
 

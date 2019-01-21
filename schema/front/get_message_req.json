@@ -4,17 +4,7 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
-            "q": {
-                "type": "string"
-            },
-            "p": {
-                "type": "integer",
-                "minimum": 1
-            },
-            "s": {
-                "type": "integer",
-                "minimum": 1
-            }
+            "p": {"$ref": "//atom/pint"}
         }
     }
 }
