@@ -9,7 +9,7 @@
   on message resource.
 * Add filter lower created date as `lc` and upper created date as `uc`
   on message resource.
-* Add filter `label` on message resource.
+* Add filter label as `l` on message resource.
 * Add API `GET /message/item/:id`.
 
 ## v0.4.0
