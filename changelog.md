@@ -2,15 +2,15 @@
 
 ## v0.5.0
 
-* Remove filter `q`, `s` on log message resource.
-* Fix filter `p` of log message resource.
-* Change `error_id` of 500 error to `log_id`.
+* Remove filter `q`, `s` on `GET /message`
+* Fix filter `p` on `GET /message`
+* Change `error_id` of 500 error to `log_id`
 * Add filter by lower level as `ll` and upper level as `ul`
-  on message resource.
+  on `GET /message`
 * Add filter lower created date as `lc` and upper created date as `uc`
-  on message resource.
-* Add filter label as `l` on message resource.
-* Add API `GET /message/item/:id`.
+  on `GET /message`
+* Add filter label as `l` on `GET /message`
+* Add API `GET /message/item/:id`
 
 ## v0.4.0
 
@@ -23,22 +23,22 @@
 
 ## v0.3.0
 
-* Add authentication by email and password.
-* Add authentication by token.
+* Add authentication by email and password
+* Add authentication by token
 * [X] Add filter by log level, date and label. This features did not add
-  in this version, it is mistake.
-* Add CLI option `--clean`, clear all of data.
+  in this version, it is mistake
+* Add CLI option `--clean`, clear all of data
 * Add CLI option `--root-email`, create root account with default password.
-* Add CLI option `--pkey`, path to private key file.
+* Add CLI option `--pkey`, path to private key file
 
 ## v0.2.0
 
-* Fix serveral application loading.
-* Add schemas.
+* Fix serveral application loading
+* Add schemas
 * Change default listen address to 0.0.0.0
-* Systemd service wait for network.
+* Systemd service wait for network
 
 ## v0.1.0
 
 * Skeleton for `document`, `data flow`, `store`, `service`, `async router`,
-  `testing`.
+  `testing`
