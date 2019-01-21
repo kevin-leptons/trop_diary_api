@@ -7,8 +7,8 @@
             "p": {"$ref": "//atom/pint"},
             "ll": {"$ref": "//atom/log_level", "default": 0},
             "ul": {"$ref": "//atom/log_level", "default": 4},
-            "ld": {"$ref": "//atom/timestamp"},
-            "ud": {"$ref": "//atom/timestamp"},
+            "lc": {"$ref": "//atom/timestamp"},
+            "uc": {"$ref": "//atom/timestamp"},
             "l": {"$ref": "//atom/log_label"}
         }
     }

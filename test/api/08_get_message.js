@@ -38,7 +38,7 @@ describe('get /message', () => {
         }
     })
 
-    it('req ld=today, ud=today', async () => {
+    it('req lc=today, uc=today', async () => {
         let d = new Date()
         d.setHours(0)
         d.setMinutes(0)
@@ -49,8 +49,8 @@ describe('get /message', () => {
 
         res = await req.get(path).
         query({
-            ld: today_start,
-            ud: today_end
+            lc: today_start,
+            uc: today_end
         })
 
         assert.equal(res.status, 200)
@@ -58,28 +58,28 @@ describe('get /message', () => {
         dflow.verify('//trop/front/get_message_res#/body', res.body)
     })
 
-    it('req ud=previous day', async () => {
+    it('req uc=previous day', async () => {
         let d = new Date()
         d.setDate(d.getDate() - 1)
         let prev_day = Math.floor(d.getTime() / 1000)
 
         res = await req.get(path).
         query({
-            ud: prev_day 
+            uc: prev_day
         })
 
         assert.equal(res.status, 200)
         assert.equal(res.body.length, 0)
     })
 
-    it('req ld=next day', async () => {
+    it('req lc=next day', async () => {
         let d = new Date()
         d.setDate(d.getDate() + 1)
         let next_day = Math.floor(d.getTime() / 1000)
 
         res = await req.get(path).
         query({
-            ld: next_day
+            lc: next_day
         })
 
         assert.equal(res.status, 200)

@@ -29,8 +29,8 @@ GET /message?q=hellop=2&s=8
 * `p` - page index
 * `ll` - lower bound of `level`
 * `ul` - upper bound of `level`
-* `ld` - lower bound of `created`
-* `ud` - upper bound of `created`
+* `lc` - lower bound of `created`
+* `uc` - upper bound of `created`
 * `l` - label
 
 ### Response
