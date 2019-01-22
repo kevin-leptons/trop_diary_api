@@ -26,24 +26,9 @@ describe('get /account', () => {
         })
     })
 
-    it('req q=root', async () => {
+    it('req p=1', async () => {
         let res = await req.get(path).
         query({
-            q: 'root'
-        })
-
-        await http_test(res, () => {
-            assert.equal(res.status, 200)
-            assert(res.body instanceof Array)
-            assert(res.body.length > 0)
-            dflow.verify('//trop/front/get_account_res#/body', res.body)
-        })
-    })
-
-    it('req q=root, p=1', async () => {
-        let res = await req.get(path).
-        query({
-            q: 'root',
             p: 1
         })
 
@@ -55,11 +40,10 @@ describe('get /account', () => {
         })
     })
 
-    it('req q=root, p=100 => empty', async () => {
+    it('req p=1000 => empty', async () => {
         let res = await req.get(path).
         query({
-            q: 'root',
-            p: 100
+            p: 1000
         })
 
         await http_test(res, () => {
@@ -73,19 +57,7 @@ describe('get /account', () => {
     it('req p=one => 400', async () => {
         let res = await req.get(path).
         query({
-            q: 'root',
             p: 'one'
-        })
-
-        await http_test(res, () => {
-            assert.equal(res.status, 400)
-        })
-    })
-
-    it('req q=null => 400', async () => {
-        let res = await req.get(path).
-        query({
-            q: null
         })
 
         await http_test(res, () => {
@@ -96,7 +68,6 @@ describe('get /account', () => {
     it('req p=null => 400', async () => {
         let res = await req.get(path).
         query({
-            q: 'root',
             p: null
         })
 
