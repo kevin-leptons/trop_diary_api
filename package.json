@@ -26,7 +26,7 @@
   "homepage": "https://github.com/kevin-leptons/trop_diary#readme",
   "dependencies": {
     "@trop/async_router": "^0.2.0",
-    "@trop/dflow": "^0.2.0",
+    "@trop/dflow": "^0.3.0",
     "bcrypt": "^3.0.3",
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
