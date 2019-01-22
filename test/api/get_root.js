@@ -1,6 +1,7 @@
 const assert = require('assert')
 
 const box = require('../box')
+const http_test = require('../http_test')
 
 describe('get /', () => {
     let req
@@ -15,8 +16,11 @@ describe('get /', () => {
     })
 
     it('req', async () => {
-        res = await req.get(path)
-        assert.equal(res.status, 200)
-        dflow.verify('//trop/front/get_root_res#/body', res.body)
+        let res = await req.get(path)
+
+        await http_test(res, () => {
+            assert.equal(res.status, 200)
+            dflow.verify('//trop/front/get_root_res#/body', res.body)
+        })
     })
 })
