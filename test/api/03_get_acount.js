@@ -1,6 +1,7 @@
 const assert = require('assert')
 
 const box = require('../box')
+const http_test = require('../http_test')
 
 describe('get /account', () => {
     let req
@@ -15,73 +16,92 @@ describe('get /account', () => {
     })
 
     it('req', async () => {
-        res = await req.get(path)
-        assert.equal(res.status, 200)
-        assert(res.body.length > 0)
-        dflow.verify('//trop/front/get_account_res#/body', res.body)
+        let res = await req.get(path)
+
+        await http_test(res, () => {
+            assert.equal(res.status, 200)
+            assert(res.body instanceof Array)
+            assert(res.body.length > 0)
+            dflow.verify('//trop/front/get_account_res#/body', res.body)
+        })
     })
 
     it('req q=root', async () => {
-        res = await req.get(path).
+        let res = await req.get(path).
         query({
             q: 'root'
         })
 
-        assert.equal(res.status, 200)
-        assert(res.body.length > 0)
-        dflow.verify('//trop/front/get_account_res#/body', res.body)
+        await http_test(res, () => {
+            assert.equal(res.status, 200)
+            assert(res.body instanceof Array)
+            assert(res.body.length > 0)
+            dflow.verify('//trop/front/get_account_res#/body', res.body)
+        })
     })
 
     it('req q=root, p=1', async () => {
-        res = await req.get(path).
+        let res = await req.get(path).
         query({
             q: 'root',
             p: 1
         })
 
-        assert.equal(res.status, 200)
-        assert(res.body.length > 0)
-        dflow.verify('//trop/front/get_account_res#/body', res.body)
+        await http_test(res, () => {
+            assert.equal(res.status, 200)
+            assert(res.body instanceof Array)
+            assert(res.body.length > 0)
+            dflow.verify('//trop/front/get_account_res#/body', res.body)
+        })
     })
 
     it('req q=root, p=100 => empty', async () => {
-        res = await req.get(path).
+        let res = await req.get(path).
         query({
             q: 'root',
             p: 100
         })
 
-        assert.equal(res.status, 200)
-        assert(res.body.length === 0)
-        dflow.verify('//trop/front/get_account_res#/body', res.body)
+        await http_test(res, () => {
+            assert.equal(res.status, 200)
+            assert(res.body instanceof Array)
+            assert.equal(res.body.length, 0)
+            dflow.verify('//trop/front/get_account_res#/body', res.body)
+        })
     })
 
     it('req p=one => 400', async () => {
-        res = await req.get(path).
+        let res = await req.get(path).
         query({
             q: 'root',
             p: 'one'
         })
 
-        assert.equal(res.status, 400)
+        await http_test(res, () => {
+            assert.equal(res.status, 400)
+        })
     })
 
     it('req q=null => 400', async () => {
-        res = await req.get(path).
+        let res = await req.get(path).
         query({
             q: null
         })
 
-        assert.equal(res.status, 400)
+        await http_test(res, () => {
+            assert.equal(res.status, 400)
+        })
     })
 
     it('req p=null => 400', async () => {
-        res = await req.get(path).
+        let res = await req.get(path).
         query({
             q: 'root',
             p: null
         })
 
-        assert.equal(res.status, 400)
+        await http_test(res, () => {
+            assert.equal(res.status, 400)
+        })
     })
 })
