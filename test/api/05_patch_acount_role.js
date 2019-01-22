@@ -1,6 +1,7 @@
 const assert = require('assert')
 
 const box = require('../box')
+const http_test = require('../http_test')
 
 describe('patch /account/role', () => {
     let req
@@ -15,37 +16,49 @@ describe('patch /account/role', () => {
     })
 
     it('req', async () => {
-        res = await req.patch(path).
+        let res = await req.patch(path).
         send({
             email: 'reader@mail.com',
             role: 'rw',
         })
-        assert.equal(res.status, 200)
+
+        await http_test(res, () => {
+            assert.equal(res.status, 200)
+        })
     })
 
     it('req, invalid attribute => 400', async () => {
-        res = await req.patch(path).
+        let res = await req.patch(path).
         send({
             invalid_attribute: 'some value',
         })
-        assert.equal(res.status, 400)
+
+        await http_test(res, () => {
+            assert.equal(res.status, 400)
+        })
     })
 
     it('req, does not exists email => 400', async () => {
-        res = await req.patch(path).
+        let res = await req.patch(path).
         send({
             email: 'invalid@mail.com',
             role: 'rw'
         })
-        assert.equal(res.status, 400)
+
+        await http_test(res, () => {
+            assert.equal(res.status, 400)
+        })
     })
 
     it('req, role=invalid => 400', async () => {
-        res = await req.patch(path).
+        let res = await req.patch(path).
         send({
             email: 'invalid@mail.com',
             role: 'invalid'
         })
-        assert.equal(res.status, 400)
+
+        await http_test(res, () => {
+            assert.equal(res.status, 400)
+        })
     })
 })
