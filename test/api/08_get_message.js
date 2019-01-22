@@ -1,6 +1,7 @@
 const assert = require('assert')
 
 const box = require('../box')
+const http_test = require('../http_test')
 
 describe('get /message', () => {
     let req
@@ -15,27 +16,33 @@ describe('get /message', () => {
     })
 
     it('req', async () => {
-        res = await req.get(path)
+        let res = await req.get(path)
 
-        assert.equal(res.status, 200)
-        dflow.verify('//trop/front/get_message_res#/body', res.body)
+        await http_test(res, () => {
+            assert.equal(res.status, 200)
+            assert(res.body instanceof Array)
+            dflow.verify('//trop/front/get_message_res#/body', res.body)
+        })
     })
 
     it('req, ll=1, ul=2', async () => {
-        res = await req.get(path).
+        let res = await req.get(path).
         query({
             ll: 1,
             ul: 2
         })
 
-        assert.equal(res.status, 200)
-        dflow.verify('//trop/front/get_message_res#/body', res.body)
+        await http_test(res, () => {
+            assert.equal(res.status, 200)
+            assert(res.body instanceof Array)
+            dflow.verify('//trop/front/get_message_res#/body', res.body)
 
-        assert(res.body.length === 2)
-        for (let item of res.body) {
-            assert(item.level >= 1)
-            assert(item.level <= 2)
-        }
+            assert(res.body.length === 2)
+            for (let item of res.body) {
+                assert(item.level >= 1)
+                assert(item.level <= 2)
+            }
+        })
     })
 
     it('req lc=today, uc=today', async () => {
@@ -47,15 +54,18 @@ describe('get /message', () => {
         d.setDate(d.getDate() + 1)
         let today_end = Math.floor(d.getTime() / 1000)
 
-        res = await req.get(path).
+        let res = await req.get(path).
         query({
             lc: today_start,
             uc: today_end
         })
 
-        assert.equal(res.status, 200)
-        assert.equal(res.body.length, 6)
-        dflow.verify('//trop/front/get_message_res#/body', res.body)
+        await http_test(res, () => {
+            assert.equal(res.status, 200)
+            assert(res.body instanceof Array)
+            assert.equal(res.body.length, 6)
+            dflow.verify('//trop/front/get_message_res#/body', res.body)
+        })
     })
 
     it('req uc=previous day', async () => {
@@ -63,13 +73,16 @@ describe('get /message', () => {
         d.setDate(d.getDate() - 1)
         let prev_day = Math.floor(d.getTime() / 1000)
 
-        res = await req.get(path).
+        let res = await req.get(path).
         query({
             uc: prev_day
         })
 
-        assert.equal(res.status, 200)
-        assert.equal(res.body.length, 0)
+        await http_test(res, () => {
+            assert.equal(res.status, 200)
+            assert(res.body instanceof Array)
+            assert.equal(res.body.length, 0)
+        })
     })
 
     it('req lc=next day', async () => {
@@ -77,80 +90,101 @@ describe('get /message', () => {
         d.setDate(d.getDate() + 1)
         let next_day = Math.floor(d.getTime() / 1000)
 
-        res = await req.get(path).
+        let res = await req.get(path).
         query({
             lc: next_day
         })
 
-        assert.equal(res.status, 200)
-        assert.equal(res.body.length, 0)
+        await http_test(res, () => {
+            assert.equal(res.status, 200)
+            assert(res.body instanceof Array)
+            assert.equal(res.body.length, 0)
+        })
     })
 
     it('req l=api', async () => {
-        res = await req.get(path).
+        let res = await req.get(path).
         query({
             l: 'api'
         })
 
-        assert.equal(res.status, 200)
-        assert.notEqual(res.body.length, 0)
-        dflow.verify('//trop/front/get_message_res#/body', res.body)
+        await http_test(res, () => {
+            assert.equal(res.status, 200)
+            assert(res.body instanceof Array)
+            assert.notEqual(res.body.length, 0)
+            dflow.verify('//trop/front/get_message_res#/body', res.body)
+        })
     })
 
     it('req l=does_not_exist', async () => {
-        res = await req.get(path).
+        let res = await req.get(path).
         query({
             l: 'does_not_exist'
         })
 
-        assert.equal(res.status, 200)
-        assert(res.body.length === 0)
+        await http_test(res, () => {
+            assert.equal(res.status, 200)
+            assert(res.body instanceof Array)
+            assert(res.body.length === 0)
+        })
     })
 
     it('req p=1', async () => {
-        res = await req.get(path).
+        let res = await req.get(path).
         query({
             p: 1
         })
 
-        assert.equal(res.status, 200)
-        dflow.verify('//trop/front/get_message_res#/body', res.body)
+        await http_test(res, () => {
+            assert.equal(res.status, 200)
+            assert(res.body instanceof Array)
+            dflow.verify('//trop/front/get_message_res#/body', res.body)
+        })
     })
 
     it('req p=1000', async () => {
-        res = await req.get(path).
+        let res = await req.get(path).
         query({
             p: 1000
         })
 
-        assert.equal(res.status, 200)
-        assert(res.body.length === 0)
+        await http_test(res, () => {
+            assert.equal(res.status, 200)
+            assert(res.body instanceof Array)
+            assert(res.body.length === 0)
+        })
     })
 
     it('req p=0', async () => {
-        res = await req.get(path).
+        let res = await req.get(path).
         query({
             p: 0
         })
 
-        assert.equal(res.status, 400)
+        await http_test(res, () => {
+            assert.equal(res.status, 400)
+        })
     })
 
     it('req p=-1', async () => {
-        res = await req.get(path).
+        let res = await req.get(path).
         query({
             p: -1
         })
 
-        assert.equal(res.status, 400)
+        await http_test(res, () => {
+            assert.equal(res.status, 400)
+        })
     })
 
     it('req, invlid_param=invalid => error', async () => {
-        res = await req.get(path).
+        let res = await req.get(path).
         query({
             invalid_param: 'invalid'
         })
 
-        assert.equal(res.status, 400)
+        await http_test(res, () => {
+            assert.equal(res.status, 400)
+        })
     })
 })
