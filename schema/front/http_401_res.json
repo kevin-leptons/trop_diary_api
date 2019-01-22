@@ -1,0 +1,11 @@
+{
+    "$id": "//trop/front/http_401_res",
+    "body": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["log_id"],
+        "properties": {
+            "log_id": {"$ref": "//atom/log_id"}
+        }
+    }
+}

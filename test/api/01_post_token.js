@@ -9,8 +9,6 @@ const http_test = require('../http_test')
 describe('post /token', () => {
     let req
     let dflow
-    let old_token
-    let old_access_token
     let path = '/token'
 
     before(async () => {
@@ -21,12 +19,12 @@ describe('post /token', () => {
     })
 
     it('req create', async () => {
-        let res = await req.post(path)
-            .send({
-                grant_type: 'password',
-                username: 'root@mail.com',
-                password: 'goddamnit'
-            })
+        let res = await req.post(path).
+        send({
+            grant_type: 'password',
+            username: 'root@mail.com',
+            password: 'goddamnit'
+        })
 
         await http_test(res, () => {
             assert.equal(res.status, 200)
@@ -36,12 +34,13 @@ describe('post /token', () => {
             dflow.verify('//trop/front/access_token', access_token)
 
             req.set_token(res.body.access_token)
-            old_token = res.body
-            old_access_token = access_token
+            box.set_key('token', res.body)
+            box.set_key('access_token', access_token)
         })
     })
 
     it('req refresh', async () => {
+        let old_token = box.get_key('token')
         let res = await req.post(path).
         send({
             grant_type: 'refresh_token',
@@ -55,10 +54,11 @@ describe('post /token', () => {
             let access_token = jwt.decode(res.body.access_token)
             dflow.verify('//trop/front/access_token', access_token)
 
+            let old_access_token = box.get_key('access_token')
             assert.equal(access_token.role, old_access_token.role)
 
             req.set_token(res.body.access_token)
-            old_token = res.body
+            box.set_key('token', res.body)
         })
     })
 
@@ -70,6 +70,7 @@ describe('post /token', () => {
 
         await http_test(res, () => {
             assert.equal(res.status, 400)
+            dflow.verify('//trop/front/http_400_res#/body', res.body)
         })
     })
 
@@ -81,6 +82,7 @@ describe('post /token', () => {
 
         await http_test(res, () => {
             assert.equal(res.status, 400)
+            dflow.verify('//trop/front/http_400_res#/body', res.body)
         })
     })
 
@@ -93,6 +95,7 @@ describe('post /token', () => {
 
         await http_test(res, () => {
             assert.equal(res.status, 400)
+            dflow.verify('//trop/front/http_400_res#/body', res.body)
         })
     })
 
@@ -106,6 +109,7 @@ describe('post /token', () => {
 
         await http_test(res, () => {
             assert.equal(res.status, 401)
+            dflow.verify('//trop/front/http_401_res#/body', res.body)
         })
     })
 
@@ -119,6 +123,7 @@ describe('post /token', () => {
 
         await http_test(res, () => {
             assert.equal(res.status, 401)
+            dflow.verify('//trop/front/http_401_res#/body', res.body)
         })
     })
 
@@ -131,6 +136,7 @@ describe('post /token', () => {
 
         await http_test(res, () => {
             assert.equal(res.status, 400)
+            dflow.verify('//trop/front/http_400_res#/body', res.body)
         })
     })
 
@@ -143,6 +149,7 @@ describe('post /token', () => {
 
         await http_test(res, () => {
             assert.equal(res.status, 401)
+            dflow.verify('//trop/front/http_401_res#/body', res.body)
         })
     })
 })

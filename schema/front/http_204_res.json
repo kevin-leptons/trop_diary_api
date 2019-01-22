@@ -1,0 +1,9 @@
+{
+    "$id": "//trop/front/http_204_res",
+    "body": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+        }
+    }
+}

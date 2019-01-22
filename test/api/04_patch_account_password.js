@@ -24,7 +24,8 @@ describe('patch /account/password', () => {
         })
 
         await http_test(res, () => {
-            assert.equal(res.status, 200)
+            assert.equal(res.status, 204)
+            dflow.verify('//trop/front/http_204_res#/body', res.body)
         })
     })
 
@@ -36,6 +37,7 @@ describe('patch /account/password', () => {
 
         await http_test(res, () => {
             assert.equal(res.status, 400)
+            dflow.verify('//trop/front/http_400_res#/body', res.body)
         })
     })
 
@@ -48,6 +50,7 @@ describe('patch /account/password', () => {
 
         await http_test(res, () => {
             assert.equal(res.status, 400)
+            dflow.verify('//trop/front/http_400_res#/body', res.body)
         })
     })
 
@@ -60,6 +63,7 @@ describe('patch /account/password', () => {
 
         await http_test(res, () => {
             assert.equal(res.status, 400)
+            dflow.verify('//trop/front/http_400_res#/body', res.body)
         })
     })
 
@@ -72,6 +76,7 @@ describe('patch /account/password', () => {
 
         await http_test(res, () => {
             assert.equal(res.status, 400)
+            dflow.verify('//trop/front/http_400_res#/body', res.body)
         })
     })
 
@@ -85,6 +90,7 @@ describe('patch /account/password', () => {
 
         await http_test(res, () => {
             assert.equal(res.status, 401)
+            dflow.verify('//trop/front/http_401_res#/body', res.body)
         })
     })
 
@@ -98,6 +104,7 @@ describe('patch /account/password', () => {
 
         await http_test(res, () => {
             assert.equal(res.status, 401)
+            dflow.verify('//trop/front/http_401_res#/body', res.body)
         })
     })
 })

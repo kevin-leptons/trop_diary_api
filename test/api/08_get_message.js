@@ -163,6 +163,7 @@ describe('get /message', () => {
 
         await http_test(res, () => {
             assert.equal(res.status, 400)
+            dflow.verify('//trop/front/http_400_res#/body', res.body)
         })
     })
 
@@ -174,6 +175,7 @@ describe('get /message', () => {
 
         await http_test(res, () => {
             assert.equal(res.status, 400)
+            dflow.verify('//trop/front/http_400_res#/body', res.body)
         })
     })
 
@@ -185,6 +187,7 @@ describe('get /message', () => {
 
         await http_test(res, () => {
             assert.equal(res.status, 400)
+            dflow.verify('//trop/front/http_400_res#/body', res.body)
         })
     })
 })

@@ -19,7 +19,8 @@ describe('delete /account/:username', () => {
         let res = await req.delete(path + 'reader@mail.com')
 
         await http_test(res, () => {
-            assert.equal(res.status, 200)
+            assert.equal(res.status, 204)
+            dflow.verify('//trop/front/http_204_res#/body', res.body)
         })
     })
 
@@ -28,6 +29,7 @@ describe('delete /account/:username', () => {
 
         await http_test(res, () => {
             assert.equal(res.status, 400)
+            dflow.verify('//trop/front/http_400_res#/body', res.body)
         })
     })
 })
