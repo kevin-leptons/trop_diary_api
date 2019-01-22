@@ -1,6 +1,7 @@
 const assert = require('assert')
 
 const box = require('../box')
+const http_test = require('../http_test')
 
 describe('delete /account/:username', () => {
     let req
@@ -15,12 +16,18 @@ describe('delete /account/:username', () => {
     })
 
     it('req', async () => {
-        res = await req.delete(path + 'reader@mail.com')
-        assert.equal(res.status, 200)
+        let res = await req.delete(path + 'reader@mail.com')
+
+        await http_test(res, () => {
+            assert.equal(res.status, 200)
+        })
     })
 
     it('req, does not exists username => 400', async () => {
-        res = await req.delete(path + 'sdfsadfdsaf@mail.com')
-        assert.equal(res.status, 400)
+        let res = await req.delete(path + 'sdfsadfdsaf@mail.com')
+
+        await http_test(res, () => {
+            assert.equal(res.status, 400)
+        })
     })
 })
