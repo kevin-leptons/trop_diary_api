@@ -1,6 +1,7 @@
 const assert = require('assert')
 
 const box = require('../box')
+const {Http400} = require('../../lib/error')
 
 describe('schema://trop/front/get_message_req#/query', () => {
     let schema = '//trop/front/get_message_req#/query'
@@ -26,6 +27,6 @@ describe('schema://trop/front/get_message_req#/query', () => {
             dflow.verify(schema, {
                 page: 1,
             })
-        }, Array)
+        }, Http400)
     })
 })

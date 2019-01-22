@@ -1,6 +1,7 @@
 const assert = require('assert')
 
 const box = require('../box')
+const {Http400} = require('../../lib/error')
 
 describe('schema://atom/ip', () => {
     let schema = '//atom/ip'
@@ -22,6 +23,6 @@ describe('schema://atom/ip', () => {
     it('verify() => error', async () => {
         assert.throws(() => {
             dflow.verify(schema, 'This is not IP Address')
-        })
+        }, Http400)
     })
 })

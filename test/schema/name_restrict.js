@@ -1,6 +1,7 @@
 const assert = require('assert')
 
 const box = require('../box')
+const {Http400} = require('../../lib/error')
 
 describe('schema://atom/name#/restrict', () => {
     let schema = '//atom/name#/restrict'
@@ -22,12 +23,12 @@ describe('schema://atom/name#/restrict', () => {
     it('verify(mr bean) => error', async () => {
         assert.throws(() => {
             dflow.verify(schema, 'mr bean')
-        })
+        }, Http400)
     })
 
     it('verify(Mr.Bean) => error', async () => {
         assert.throws(() => {
             dflow.verify(schema, 'Mr.Bean')
-        })
+        }, Http400)
     })
 })

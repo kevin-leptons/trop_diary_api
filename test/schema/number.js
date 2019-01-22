@@ -1,6 +1,7 @@
 const assert = require('assert')
 
 const box = require('../box')
+const {Http400} = require('../../lib/error')
 
 describe('schema://atom/number', () => {
     let schema_int = '//atom/int'
@@ -20,7 +21,7 @@ describe('schema://atom/number', () => {
     it('verify_int(100.1) => error', async () => {
         assert.throws(() => {
             dflow.verify(schema_int, 100.1)
-        }, Array)
+        }, Http400)
     })
 
     it('verify_uint(100)', async () => {
@@ -30,12 +31,12 @@ describe('schema://atom/number', () => {
     it('verify_uint(-100) => error', async () => {
         assert.throws(() => {
             dflow.verify(schema_uint, -100)
-        }, Array)
+        }, Http400)
     })
 
     it('verify_uint(100.1) => error', async () => {
         assert.throws(() => {
             dflow.verify(schema_uint, 100.1)
-        }, Array)
+        }, Http400)
     })
 })

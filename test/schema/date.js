@@ -1,6 +1,7 @@
 const assert = require('assert')
 
 const box = require('../box')
+const {Http400} = require('../../lib/error')
 
 describe('schema://atom/date', () => {
     let schema = '//atom/date'
@@ -35,13 +36,13 @@ describe('schema://atom/date', () => {
     it(`verify(${d5}) => error`, async () => {
         assert.throws(() => {
             dflow.verify(schema, d5)
-        }, Array)
+        }, Http400)
     })
 
     let d6 = '2018-12-31T23:59:60ZAAAAA'
     it(`verify(${d6}) => error`, async () => {
         assert.throws(() => {
             dflow.verify(schema, d6)
-        }, Array)
+        }, Http400)
     })
 })

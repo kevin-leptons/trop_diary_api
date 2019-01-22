@@ -1,6 +1,7 @@
 const assert = require('assert')
 
 const box = require('../box')
+const {Http400} = require('../../lib/error')
 
 describe('schema://atom/version', () => {
     let schema = '//atom/version'
@@ -30,6 +31,6 @@ describe('schema://atom/version', () => {
     it('verify(3.2.1.0.9) => error', async () => {
         assert.throws(() => {
             dflow.verify(schema, '3.2.1.0.9')
-        })
+        }, Http400)
     })
 })

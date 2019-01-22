@@ -1,6 +1,7 @@
 const assert = require('assert')
 
 const box = require('../box')
+const {Http400} = require('../../lib/error')
 
 describe('schema://trop/front/post_message_req#/body', () => {
     let schema = '//trop/front/post_message_req#/body'
@@ -29,7 +30,7 @@ describe('schema://trop/front/post_message_req#/body', () => {
     it('verify({}) => error', async () => {
         assert.throws(() => {
             dflow.verify(schema, {})
-        }, Array)
+        }, Http400)
     })
 
     it('verify(level) => error', async () => {
@@ -37,7 +38,7 @@ describe('schema://trop/front/post_message_req#/body', () => {
             dflow.verify(schema, {
                 level: 0
             })
-        }, Array)
+        }, Http400)
     })
 
     it('verify(message) => error', async () => {
@@ -45,6 +46,6 @@ describe('schema://trop/front/post_message_req#/body', () => {
             dflow.verify(schema, {
                 message: "something happen"
             })
-        }, Array)
+        }, Http400)
     })
 })
