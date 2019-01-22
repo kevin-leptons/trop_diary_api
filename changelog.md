@@ -1,8 +1,12 @@
 # Changelog
 
+## v0.8.0
+
+* Improve internal error handling
+
 ## v0.7.0
 
-* Improve error interface between APIs and clients.
+* Improve error interface between APIs and clients
 
 ## v0.6.0
 
