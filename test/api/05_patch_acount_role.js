@@ -16,8 +16,7 @@ describe('patch /account/role', () => {
     })
 
     it('req', async () => {
-        let res = await req.patch(path).
-        send({
+        let res = await req.patch(path, {
             email: 'reader@mail.com',
             role: 'rw',
         })
@@ -29,8 +28,7 @@ describe('patch /account/role', () => {
     })
 
     it('req, invalid attribute => 400', async () => {
-        let res = await req.patch(path).
-        send({
+        let res = await req.patch(path, {
             invalid_attribute: 'some value',
         })
 
@@ -41,8 +39,7 @@ describe('patch /account/role', () => {
     })
 
     it('req, does not exists email => 400', async () => {
-        let res = await req.patch(path).
-        send({
+        let res = await req.patch(path, {
             email: 'invalid@mail.com',
             role: 'rw'
         })
@@ -54,8 +51,7 @@ describe('patch /account/role', () => {
     })
 
     it('req, role=invalid => 400', async () => {
-        let res = await req.patch(path).
-        send({
+        let res = await req.patch(path, {
             email: 'invalid@mail.com',
             role: 'invalid'
         })

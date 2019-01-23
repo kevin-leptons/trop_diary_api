@@ -19,8 +19,7 @@ describe('post /token', () => {
     })
 
     it('req create', async () => {
-        let res = await req.post(path).
-        send({
+        let res = await req.post(path, {
             grant_type: 'password',
             username: 'root@mail.com',
             password: 'goddamnit'
@@ -41,8 +40,7 @@ describe('post /token', () => {
 
     it('req refresh', async () => {
         let old_token = box.get_key('token')
-        let res = await req.post(path).
-        send({
+        let res = await req.post(path, {
             grant_type: 'refresh_token',
             refresh_token: old_token.refresh_token
         })
@@ -63,20 +61,17 @@ describe('post /token', () => {
     })
 
     it('req, grant_type=invalid => 400', async () => {
-        let res = await req.post(path).
-        send({
+        let res = await req.post(path, {
             grant_type: 'invalid'
         })
 
         await http_test(res, () => {
-            assert.equal(res.status, 400)
             dflow.verify('//trop/front/http_400_res#/body', res.body)
         })
     })
 
     it('req, invalid_attirbute=invalid => 400', async () => {
-        let res = await req.post(path).
-        send({
+        let res = await req.post(path, {
             invalid_attribute: 'invalid'
         })
 
@@ -87,8 +82,7 @@ describe('post /token', () => {
     })
 
     it('req create, invalid atribute USERNAME => 400', async () => {
-        let res = await req.post(path).
-        send({
+        let res = await req.post(path, {
             grant_type: 'password',
             USERNAME: 'root@mail.com'
         })
@@ -100,8 +94,7 @@ describe('post /token', () => {
     })
 
     it('req create, invalid username => 401', async () => {
-        let res = await req.post(path).
-        send({
+        let res = await req.post(path, {
             grant_type: 'password',
             username: 'invalid@mail.com',
             password: 'oopssssss'
@@ -114,8 +107,7 @@ describe('post /token', () => {
     })
 
     it('req create, invalid password => 401', async () => {
-        let res = await req.post(path).
-        send({
+        let res = await req.post(path, {
             grant_type: 'password',
             username: 'root@mail.com',
             password: 'oopssssss'
@@ -128,8 +120,7 @@ describe('post /token', () => {
     })
 
     it('req refresh, invalid atribute REFRESH_TOKEN => 400', async () => {
-        let res = await req.post(path).
-        send({
+        let res = await req.post(path, {
             grant_type: 'refresh_token',
             REFRESH_TOKEN: uuidv4()
         })
@@ -141,8 +132,7 @@ describe('post /token', () => {
     })
 
     it('req refresh => 401', async () => {
-        let res = await req.post(path).
-        send({
+        let res = await req.post(path, {
             grant_type: 'refresh_token',
             refresh_token: uuidv4()
         })

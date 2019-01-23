@@ -16,8 +16,7 @@ describe('post /account', () => {
     })
 
     it('req role=r', async () => {
-        let res = await req.post(path).
-        send({
+        let res = await req.post(path, {
             email: 'reader@mail.com',
             password: 'banana',
             role: 'r'
@@ -30,8 +29,7 @@ describe('post /account', () => {
     })
 
     it('req role=w', async () => {
-        let res = await req.post(path).
-        send({
+        let res = await req.post(path, {
             email: 'writer@mail.com',
             password: 'banana',
             role: 'w'
@@ -44,8 +42,7 @@ describe('post /account', () => {
     })
 
     it('req role=rw', async () => {
-        let res = await req.post(path).
-        send({
+        let res = await req.post(path, {
             email: 'monitor@mail.com',
             password: 'banana',
             role: 'rw'
@@ -58,8 +55,7 @@ describe('post /account', () => {
     })
 
     it('req role=root', async () => {
-        let res = await req.post(path).
-        send({
+        let res = await req.post(path, {
             email: 'god@mail.com',
             password: 'banana',
             role: 'root'
@@ -72,8 +68,7 @@ describe('post /account', () => {
     })
 
     it('req role=invalid => error', async () => {
-        let res = await req.post(path).
-        send({
+        let res = await req.post(path, {
             email: 'reader@mail.com',
             password: 'banana',
             role: 'invalid'
@@ -86,8 +81,7 @@ describe('post /account', () => {
     })
 
     it('req => error duplicated', async () => {
-        let res = await req.post(path).
-        send({
+        let res = await req.post(path, {
             email: 'reader@mail.com',
             password: 'banana',
             role: 'r'

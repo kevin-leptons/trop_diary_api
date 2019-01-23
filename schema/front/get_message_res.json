@@ -13,7 +13,7 @@
                 "message"
             ],
             "properties": {
-                "_id": {"$ref": "//atom/object_id"},
+                "_id": {"$ref": "//atom/log_id"},
                 "ip": {"$ref": "//atom/ip"},
                 "created": {"$ref": "//atom/timestamp"},
                 "level": {"$ref": "//atom/log_level"},

@@ -16,8 +16,7 @@ describe('patch /account/password', () => {
     })
 
     it('req', async () => {
-        let res = await req.patch(path).
-        send({
+        let res = await req.patch(path, {
             email: 'root@mail.com',
             old_password: 'goddamnit',
             new_password: 'motherfucker'
@@ -30,8 +29,7 @@ describe('patch /account/password', () => {
     })
 
     it('req, put invalid attribute => 400', async () => {
-        let res = await req.patch(path).
-        send({
+        let res = await req.patch(path, {
             invalid_attribute: 'some value'
         })
 
@@ -42,8 +40,7 @@ describe('patch /account/password', () => {
     })
 
     it('req, miss email => 400', async () => {
-        let res = await req.patch(path).
-        send({
+        let res = await req.patch(path, {
             old_password: 'goddamnit',
             new_password: 'motherfucker'
         })
@@ -55,8 +52,7 @@ describe('patch /account/password', () => {
     })
 
     it('req, miss old_password => 400', async () => {
-        let res = await req.patch(path).
-        send({
+        let res = await req.patch(path, {
             email: 'root@mail.com',
             new_password: 'motherfucker'
         })
@@ -68,8 +64,7 @@ describe('patch /account/password', () => {
     })
 
     it('req, miss new_password => 400', async () => {
-        let res = await req.patch(path).
-        send({
+        let res = await req.patch(path, {
             email: 'root@mail.com',
             old_password: 'goddamnit'
         })
@@ -81,8 +76,7 @@ describe('patch /account/password', () => {
     })
 
     it('req, invalid email => 401', async () => {
-        let res = await req.patch(path).
-        send({
+        let res = await req.patch(path, {
             email: 'lkflksdfjlkj@mail.com',
             old_password: 'goddamnit',
             new_password: 'motherfucker'
@@ -95,8 +89,7 @@ describe('patch /account/password', () => {
     })
 
     it('req, invalid old_password => 401', async () => {
-        let res = await req.patch(path).
-        send({
+        let res = await req.patch(path, {
             email: 'root@mail.com',
             old_password: 'jlkdsjflkasdjflksdj',
             new_password: 'motherfucker'

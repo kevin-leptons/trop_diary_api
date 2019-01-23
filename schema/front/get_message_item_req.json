@@ -5,7 +5,7 @@
         "additionalProperties": false,
         "required": ["id"],
         "properties": {
-            "id": {"$ref": "//atom/object_id"}
+            "id": {"$ref": "//atom/log_id"}
         }
     }
 }

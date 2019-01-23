@@ -9,32 +9,50 @@ class Request {
         this._auth_header = 'Bearer ' + token
     }
 
-    get(path) {
-        return this._request('get', path)
+    async get(path, params) {
+        return await this._request('get', path, params)
     }
 
-    post(path) {
-        return this._request('post', path)
+    async post(path, data, params) {
+        return await this._request('post', path, params, data)
     }
 
-    put(path) {
-        return this._request('put', path)
+    async put(path, data, params) {
+        return await this._request('put', path, params, data)
     }
 
-    patch(path) {
-        return this._request('patch', path)
+    async patch(path, data, params) {
+        return await this._request('patch', path, params, data)
     }
 
-    delete(path) {
-        return this._request('delete', path)
+    async delete(path, params) {
+        return await this._request('delete', path, params)
     }
 
     // PRIVATE MEMBERS
 
-    _request(method, path) {
+    async _request(method, path, params, data) {
         let req = this._create_request(method, path)
+        if (params) {
+            req.query(params)
+        }
+        if (data) {
+            req.send(data)
+        }
         this._set_auth_header(req)
-        return req
+
+        try {
+            let res = await req
+            return {
+                status: res.status,
+                body: res.body
+            }
+        } catch (e) {
+            return {
+                status: e.response.status,
+                body: e.response.body
+            }
+        }
     }
 
     _create_request(method, path) {

@@ -18,8 +18,7 @@ describe('post /message', () => {
     })
 
     it('req, level=info', async () => {
-        let res = await req.post(path).
-        send({
+        let res = await req.post(path, {
             level: 0,
             message: 'something happens'
         })
@@ -32,8 +31,7 @@ describe('post /message', () => {
     })
 
     it('req, level=debug', async () => {
-        let res = await req.post(path).
-        send({
+        let res = await req.post(path, {
             level: 1,
             message: 'something happens'
         })
@@ -45,8 +43,7 @@ describe('post /message', () => {
     })
 
     it('req, level=warn', async () => {
-        let res = await req.post(path).
-        send({
+        let res = await req.post(path, {
             level: 2,
             message: 'something happens'
         })
@@ -58,8 +55,7 @@ describe('post /message', () => {
     })
 
     it('req, level=error', async () => {
-        let res = await req.post(path).
-        send({
+        let res = await req.post(path, {
             level: 3,
             message: 'something happens'
         })
@@ -71,8 +67,7 @@ describe('post /message', () => {
     })
 
     it('req, level=fatal', async () => {
-        let res = await req.post(path).
-        send({
+        let res = await req.post(path, {
             level: 4,
             message: 'something happens'
         })
@@ -84,8 +79,7 @@ describe('post /message', () => {
     })
 
     it('req label=api', async () => {
-        let res = await req.post(path).
-        send({
+        let res = await req.post(path, {
             level: 0,
             message: 'something happens',
             label: 'api'
@@ -98,8 +92,7 @@ describe('post /message', () => {
     })
 
     it('req label=null => 400', async () => {
-        let res = await req.post(path).
-        send({
+        let res = await req.post(path, {
             level: 0,
             message: 'something happens',
             label: null
@@ -112,8 +105,7 @@ describe('post /message', () => {
     })
 
     it('req, invalid_property=invalid => 400', async () => {
-        let res = await req.post(path).
-        send({
+        let res = await req.post(path, {
             level: 0,
             message: 'something happens',
             invalid_property: 'invalid'

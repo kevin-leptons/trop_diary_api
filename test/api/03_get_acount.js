@@ -27,8 +27,7 @@ describe('get /account', () => {
     })
 
     it('req p=1', async () => {
-        let res = await req.get(path).
-        query({
+        let res = await req.get(path, {
             p: 1
         })
 
@@ -41,8 +40,7 @@ describe('get /account', () => {
     })
 
     it('req p=1000 => empty', async () => {
-        let res = await req.get(path).
-        query({
+        let res = await req.get(path, {
             p: 1000
         })
 
@@ -55,8 +53,7 @@ describe('get /account', () => {
     })
 
     it('req p=one => 400', async () => {
-        let res = await req.get(path).
-        query({
+        let res = await req.get(path, {
             p: 'one'
         })
 
@@ -67,8 +64,7 @@ describe('get /account', () => {
     })
 
     it('req p=null => 400', async () => {
-        let res = await req.get(path).
-        query({
+        let res = await req.get(path, {
             p: null
         })
 

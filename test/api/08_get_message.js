@@ -26,8 +26,7 @@ describe('get /message', () => {
     })
 
     it('req, ll=1, ul=2', async () => {
-        let res = await req.get(path).
-        query({
+        let res = await req.get(path, {
             ll: 1,
             ul: 2
         })
@@ -54,8 +53,7 @@ describe('get /message', () => {
         d.setDate(d.getDate() + 1)
         let today_end = Math.floor(d.getTime() / 1000)
 
-        let res = await req.get(path).
-        query({
+        let res = await req.get(path, {
             lc: today_start,
             uc: today_end
         })
@@ -73,8 +71,7 @@ describe('get /message', () => {
         d.setDate(d.getDate() - 1)
         let prev_day = Math.floor(d.getTime() / 1000)
 
-        let res = await req.get(path).
-        query({
+        let res = await req.get(path, {
             uc: prev_day
         })
 
@@ -90,8 +87,7 @@ describe('get /message', () => {
         d.setDate(d.getDate() + 1)
         let next_day = Math.floor(d.getTime() / 1000)
 
-        let res = await req.get(path).
-        query({
+        let res = await req.get(path, {
             lc: next_day
         })
 
@@ -103,8 +99,7 @@ describe('get /message', () => {
     })
 
     it('req l=api', async () => {
-        let res = await req.get(path).
-        query({
+        let res = await req.get(path, {
             l: 'api'
         })
 
@@ -117,8 +112,7 @@ describe('get /message', () => {
     })
 
     it('req l=does_not_exist', async () => {
-        let res = await req.get(path).
-        query({
+        let res = await req.get(path, {
             l: 'does_not_exist'
         })
 
@@ -130,8 +124,7 @@ describe('get /message', () => {
     })
 
     it('req p=1', async () => {
-        let res = await req.get(path).
-        query({
+        let res = await req.get(path, {
             p: 1
         })
 
@@ -143,8 +136,7 @@ describe('get /message', () => {
     })
 
     it('req p=1000', async () => {
-        let res = await req.get(path).
-        query({
+        let res = await req.get(path, {
             p: 1000
         })
 
@@ -156,8 +148,7 @@ describe('get /message', () => {
     })
 
     it('req p=0', async () => {
-        let res = await req.get(path).
-        query({
+        let res = await req.get(path, {
             p: 0
         })
 
@@ -168,8 +159,7 @@ describe('get /message', () => {
     })
 
     it('req p=-1', async () => {
-        let res = await req.get(path).
-        query({
+        let res = await req.get(path, {
             p: -1
         })
 
@@ -180,8 +170,7 @@ describe('get /message', () => {
     })
 
     it('req, invlid_param=invalid => error', async () => {
-        let res = await req.get(path).
-        query({
+        let res = await req.get(path, {
             invalid_param: 'invalid'
         })
 

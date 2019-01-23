@@ -1,6 +1,6 @@
 const assert = require('assert')
 
-const {ObjectId} = require('mongodb')
+const uuid = require('uuid-mongodb')
 
 const box = require('../box')
 const http_test = require('../http_test')
@@ -29,7 +29,7 @@ describe('get /message/item/:id', () => {
     })
 
     it('req, id=does not exist ID => 404', async () => {
-        let res = await req.get(path + ObjectId().toString())
+        let res = await req.get(path + uuid.v4().toString())
 
         await http_test(res, () => {
             assert.equal(res.status, 404)
