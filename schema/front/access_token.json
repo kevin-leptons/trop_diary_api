@@ -11,6 +11,6 @@
             "type": "string",
             "pattern": "^@trop/diary_api$"
         },
-        "sub": {"$ref": "//atom/object_id"}
+        "sub": {"$ref": "//atom/account_id"}
     }
 }
