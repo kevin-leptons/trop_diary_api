@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.9.0
+
+* Fix API `POST /key` return type `key` instead of `bearer`
+
 ## v0.8.0
 
 * Change identity of objects from `ObjectId` to `UUID`
