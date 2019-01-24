@@ -4,6 +4,7 @@
 
 * Index on `message` document
 * Change CLI `trop-diary-api start`
+* Add deployment to docker
 
 ## v0.9.0
 
