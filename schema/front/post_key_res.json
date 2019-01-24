@@ -6,7 +6,7 @@
         "required": ["type", "access_token"],
         "properties": {
             "type": {
-                "enum": ["bearer"]
+                "enum": ["key"]
             },
             "access_token": {"$ref": "//atom/jwt"},
             "expires_in": {
