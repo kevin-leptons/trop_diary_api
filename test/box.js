@@ -10,8 +10,7 @@ let _values = {}
 async function get_app() {
     if (!_app) {
         _app = new App({
-            private_key: path.join(__dirname, '../cert/private.pem'),
-            root_email: 'root@mail.com',
+            conf_file: path.join(__dirname, 'conf', 'conf.json'),
             clean: true
         })
         await _app._init()
