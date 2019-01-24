@@ -1,7 +1,0 @@
-[Unit]
-Description=Trop Diary API - Logging Service
-After=network.targe
-
-[Service]
-Type=simple
-ExecStart=/usr/bin/trop-diary-api start --port 8080 --pkey /etc/trop_diary_api/private.pem
