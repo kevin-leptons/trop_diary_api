@@ -3,6 +3,7 @@
 ## v0.8.0
 
 * Change identity of objects from `ObjectId` to `UUID`
+* Improve system message storage
 * Improve internal error handling
 
 ## v0.7.0
