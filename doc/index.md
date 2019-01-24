@@ -1,5 +1,9 @@
 # Documents
 
+## CLIs
+
+* [List commands](cli.md)
+
 ## APIs
 
 * [Status Code](api_status_code.md)
