@@ -43,5 +43,5 @@ async function cli_start(conf) {
         conf_file: conf.confFile,
         clean: conf.clean
     })
-    await app.start(conf.port, conf.host)
+    await app.start()
 }
