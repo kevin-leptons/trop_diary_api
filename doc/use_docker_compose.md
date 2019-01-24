@@ -91,3 +91,15 @@ services:
 ```bash
 docker-compose -f docker_compose.yaml up -d
 ```
+
+As configurations, this is root account
+
+* username: root@mail.com
+* password: goddamnit
+
+## More
+
+* Use [@trop/diary_cli](https://github.com/kevin-leptons/trop_diary_cli)
+  to change password and retrieve messages
+* Use [@trop/diary_nodejs](https://github.com/kevin-leptons/trop_diary_nodejs)
+  to write mesages on applications

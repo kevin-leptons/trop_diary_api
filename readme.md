@@ -4,9 +4,8 @@ Logging API Endpoint - Ready for logging, tracing and debuging.
 
 ## Usage
 
-```bash
-trop-diary-api start --port 8080
-```
+* Via [NPM Registry & Shell](doc/use_npm.md)
+* Via [Docker Hub Registry & Docker Compose](doc/use_docker_compose.md)
 
 ## References
 

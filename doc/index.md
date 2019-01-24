@@ -1,8 +1,9 @@
 # Documents
 
-## CLIs
+## Usage
 
-* [List commands](cli.md)
+* [NPM Registry & Shell](use_npm.md)
+* [Docker Hub Registry & Docker Compose](use_docker_compose.md)
 
 ## APIs
 
@@ -14,10 +15,6 @@
     * [key](api_res_key.md)
     * [account](api_res_account.md)
     * [message](api_res_message.md)
-
-## Deployment
-
-* [Docker Compose](dep_docker_compose.md)
 
 ## Development
 
