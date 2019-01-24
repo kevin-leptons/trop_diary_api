@@ -3,6 +3,7 @@
 ## v0.10.0
 
 * Index on `message` document
+* Change CLI `trop-diary-api start`
 
 ## v0.9.0
 
