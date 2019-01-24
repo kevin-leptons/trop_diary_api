@@ -5,6 +5,7 @@
 * Change identity of objects from `ObjectId` to `UUID`
 * Improve system message storage
 * Improve internal error handling
+* Add API `POST /key` to create credential for `server-server` side
 
 ## v0.7.0
 

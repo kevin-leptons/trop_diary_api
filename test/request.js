@@ -6,7 +6,11 @@ class Request {
     }
 
     set_token(token) {
-        this._auth_header = 'Bearer ' + token
+        this._auth_header = 'bearer ' + token
+    }
+
+    set_token_key(token) {
+        this._auth_header = 'key ' + token
     }
 
     async get(path, params) {

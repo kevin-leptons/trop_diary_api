@@ -1,0 +1,19 @@
+{
+    "$id": "//trop/front/post_key_res",
+    "body": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["type", "access_token"],
+        "properties": {
+            "type": {
+                "enum": ["bearer"]
+            },
+            "access_token": {"$ref": "//atom/jwt"},
+            "expires_in": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 0
+            }
+        }
+    }
+}
