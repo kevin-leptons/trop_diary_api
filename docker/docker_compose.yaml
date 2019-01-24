@@ -1,0 +1,24 @@
+version: '2.1'
+services:
+    mongodb:
+        image: mongo
+        environment:
+            MONGO_INITDB_DATABASE: trop_diary_api
+            MONGO_INITDB_ROOT_USERNAME: root
+            MONGO_INITDB_ROOT_PASSWORD: root
+        volumes:
+            - ./mongo/000_user.js:/docker-entrypoint-initdb.d/000_user.js:ro
+        command: mongod --auth
+
+    trop_diary_api:
+        image: trop/diary_api
+        volumes:
+            - ./trop_diary_api:/etc/trop_diary_api
+        ports:
+            - 8080:80
+        command:
+            - /etc/trop_diary_api/wait.sh
+            - mongodb:27017
+            - --
+            - trop-diary-api
+            - start

@@ -15,6 +15,10 @@
     * [account](api_res_account.md)
     * [message](api_res_message.md)
 
+## Deployment
+
+* [Docker Compose](dep_docker_compose.md)
+
 ## Development
 
 * [File System](dev_fs.md)

@@ -1,0 +1,11 @@
+/dist
+/dest
+/tmp
+/node_modules
+/test
+/doc
+/docker
+package-lock.json
+.git
+*.swp
+*.swo

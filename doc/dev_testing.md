@@ -11,3 +11,9 @@ npm test
 ```bash
 npm start
 ```
+
+* docker
+
+```bash
+docker-compose -f docker/docker_compose.yaml up -d
+```
