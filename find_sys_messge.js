@@ -31,14 +31,22 @@ async function main() {
     } else {
         console.log(_title('level'), _format_level(log.level))
         console.log(_title('created'), _format_date(log.created))
+        console.log(_title('path'), log.message.req_path)
+        console.log(_title('req_method'), log.message.req_method)
+        console.log(_title('res_status'), log.message.res_status)
+        console.log(_title('req_path'), log.message.req_path)
+        console.log(_title('req_query'), log.message.req_query)
+        console.log(_title('req_body'), log.message.req_body)
         console.log()
-        console.log(JSON.stringify(log.message, null, 2))
+        console.log('===ERROR_BEGIN===')
+        console.log(log.message.error)
+        console.log('===ERROR_END===')
     }
     await client.close()
 }
 
 function _title(title) {
-    return title.toUpperCase().padEnd(8)
+    return title.toUpperCase().padEnd(16)
 }
 
 function _format_level(no) {
