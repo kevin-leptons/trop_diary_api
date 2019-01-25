@@ -33,6 +33,10 @@ class Request {
         return await this._request('delete', path, params)
     }
 
+    get raw() {
+        return this._supertest
+    }
+
     // PRIVATE MEMBERS
 
     async _request(method, path, params, data) {
