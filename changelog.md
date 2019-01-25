@@ -5,6 +5,7 @@
 * Index on `message` document
 * Change CLI `trop-diary-api start`
 * Add deployment to docker
+* Limit backtrack information to client on error 4xx
 
 ## v0.9.0
 
