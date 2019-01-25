@@ -2,5 +2,5 @@
 
 * `lib/`, library.
 * `bin/`, excutable.
-* `test/`, unit testing.
+* `test/`, unit test.
 * `doc/`, documents.

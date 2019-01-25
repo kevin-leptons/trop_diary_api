@@ -20,5 +20,5 @@
 
 * [File System](dev_fs.md)
 * [Installation](dev_install.md)
-* [Testing](dev_test.md)
+* [Test](dev_test.md)
 * [Publish](dev_publish.md)
