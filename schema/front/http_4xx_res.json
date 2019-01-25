@@ -1,5 +1,5 @@
 {
-    "$id": "//trop/front/http_409_res",
+    "$id": "//trop/front/http_4xx_res",
     "body": {
         "type": "object",
         "additionalProperties": false,

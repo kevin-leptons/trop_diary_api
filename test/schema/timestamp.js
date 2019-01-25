@@ -1,7 +1,7 @@
 const assert = require('assert')
 
 const box = require('../box')
-const {Http400} = require('../../lib/error')
+const {InvalidData} = require('../../lib/error')
 
 describe('schema://atom/timestamp', () => {
     let schema = '//atom/timestamp'
@@ -13,16 +13,16 @@ describe('schema://atom/timestamp', () => {
     })
 
     it('verify(0)', async () => {
-        dflow.verify(schema, 0)
+        dflow.raw_verify(schema, 0)
     })
 
     it('verify(34132432)', async () => {
-        dflow.verify(schema, 34132432)
+        dflow.raw_verify(schema, 34132432)
     })
 
     it('verify(-1) => error', async () => {
         assert.throws(() => {
-            dflow.verify(schema, -1)
-        }, Http400)
+            dflow.raw_verify(schema, -1)
+        }, InvalidData)
     })
 })

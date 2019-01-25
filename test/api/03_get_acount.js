@@ -22,7 +22,7 @@ describe('get /account', () => {
             assert.equal(res.status, 200)
             assert(res.body instanceof Array)
             assert(res.body.length > 0)
-            dflow.verify('//trop/front/get_account_res#/body', res.body)
+            dflow.raw_verify('//trop/front/get_account_res#/body', res.body)
         })
     })
 
@@ -35,7 +35,7 @@ describe('get /account', () => {
             assert.equal(res.status, 200)
             assert(res.body instanceof Array)
             assert(res.body.length > 0)
-            dflow.verify('//trop/front/get_account_res#/body', res.body)
+            dflow.raw_verify('//trop/front/get_account_res#/body', res.body)
         })
     })
 
@@ -48,7 +48,7 @@ describe('get /account', () => {
             assert.equal(res.status, 200)
             assert(res.body instanceof Array)
             assert.equal(res.body.length, 0)
-            dflow.verify('//trop/front/get_account_res#/body', res.body)
+            dflow.raw_verify('//trop/front/get_account_res#/body', res.body)
         })
     })
 
@@ -59,7 +59,7 @@ describe('get /account', () => {
 
         await http_test(res, () => {
             assert.equal(res.status, 400)
-            dflow.verify('//trop/front/http_400_res#/body', res.body)
+            dflow.raw_verify('//trop/front/http_4xx_res#/body', res.body)
         })
     })
 
@@ -70,7 +70,7 @@ describe('get /account', () => {
 
         await http_test(res, () => {
             assert.equal(res.status, 400)
-            dflow.verify('//trop/front/http_400_res#/body', res.body)
+            dflow.raw_verify('//trop/front/http_4xx_res#/body', res.body)
         })
     })
 })

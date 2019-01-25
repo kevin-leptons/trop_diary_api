@@ -25,7 +25,7 @@ describe('post /message', () => {
 
         await http_test(res, () => {
             assert.equal(res.status, 201)
-            dflow.verify('//trop/front/post_message_res#/body', res.body)
+            dflow.raw_verify('//trop/front/post_message_res#/body', res.body)
             set_key('message_id', res.body._id)
         })
     })
@@ -38,7 +38,7 @@ describe('post /message', () => {
 
         await http_test(res, () => {
             assert.equal(res.status, 201)
-            dflow.verify('//trop/front/post_message_res#/body', res.body)
+            dflow.raw_verify('//trop/front/post_message_res#/body', res.body)
         })
     })
 
@@ -50,7 +50,7 @@ describe('post /message', () => {
 
         await http_test(res, () => {
             assert.equal(res.status, 201)
-            dflow.verify('//trop/front/post_message_res#/body', res.body)
+            dflow.raw_verify('//trop/front/post_message_res#/body', res.body)
         })
     })
 
@@ -62,7 +62,7 @@ describe('post /message', () => {
 
         await http_test(res, () => {
             assert.equal(res.status, 201)
-            dflow.verify('//trop/front/post_message_res#/body', res.body)
+            dflow.raw_verify('//trop/front/post_message_res#/body', res.body)
         })
     })
 
@@ -74,7 +74,7 @@ describe('post /message', () => {
 
         await http_test(res, () => {
             assert.equal(res.status, 201)
-            dflow.verify('//trop/front/post_message_res#/body', res.body)
+            dflow.raw_verify('//trop/front/post_message_res#/body', res.body)
         })
     })
 
@@ -87,7 +87,7 @@ describe('post /message', () => {
 
         await http_test(res, () => {
             assert.equal(res.status, 201)
-            dflow.verify('//trop/front/post_message_res#/body', res.body)
+            dflow.raw_verify('//trop/front/post_message_res#/body', res.body)
         })
     })
 
@@ -100,7 +100,7 @@ describe('post /message', () => {
 
         await http_test(res, () => {
             assert.equal(res.status, 400)
-            dflow.verify('//trop/front/http_400_res#/body', res.body)
+            dflow.raw_verify('//trop/front/http_4xx_res#/body', res.body)
         })
     })
 
@@ -113,7 +113,7 @@ describe('post /message', () => {
 
         await http_test(res, () => {
             assert.equal(res.status, 400)
-            dflow.verify('//trop/front/http_400_res#/body', res.body)
+            dflow.raw_verify('//trop/front/http_4xx_res#/body', res.body)
         })
     })
 })

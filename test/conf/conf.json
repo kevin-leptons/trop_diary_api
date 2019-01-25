@@ -2,6 +2,6 @@
     "host": "0.0.0.0",
     "port": 8080,
     "private_key": "private.pem",
-    "store": "mongodb://localhost/trop_api",
+    "store": "mongodb://localhost/trop_diary_api",
     "root_email": "root@mail.com"
 }

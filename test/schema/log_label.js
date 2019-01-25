@@ -1,7 +1,7 @@
 const assert = require('assert')
 
 const box = require('../box')
-const {Http400} = require('../../lib/error')
+const {InvalidData} = require('../../lib/error')
 
 describe('schema://atom/log_label', () => {
     let schema = '//atom/log_label'
@@ -13,20 +13,20 @@ describe('schema://atom/log_label', () => {
     })
 
     it('verify(aa)', async () => {
-        dflow.verify(schema, 'aa')
+        dflow.raw_verify(schema, 'aa')
     })
 
     let d1 = '!@#$'
     it(`verify(${d1}) => error`, async () => {
         assert.throws(() => {
-            dflow.verify(schema, d1)
-        }, Http400)
+            dflow.raw_verify(schema, d1)
+        }, InvalidData)
     })
 
     let d2 = 'a'.repeat(17)
     it(`verify(${d2}) => error`, async () => {
         assert.throws(() => {
-            dflow.verify(schema, d2)
-        }, Http400)
+            dflow.raw_verify(schema, d2)
+        }, InvalidData)
     })
 })

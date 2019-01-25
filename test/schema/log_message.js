@@ -12,14 +12,14 @@ describe('schema://atom/log_message', () => {
     })
 
     it('verify(1)', async () => {
-        dflow.verify(schema, 1)
+        dflow.raw_verify(schema, 1)
     })
 
     it('verify(one)', async () => {
-        dflow.verify(schema, 'one')
+        dflow.raw_verify(schema, 'one')
     })
 
     it('verify({})', async () => {
-        dflow.verify(schema, {})
+        dflow.raw_verify(schema, {})
     })
 })

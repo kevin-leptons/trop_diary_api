@@ -1,7 +1,7 @@
 const assert = require('assert')
 
 const box = require('../box')
-const {Http400} = require('../../lib/error')
+const {InvalidData} = require('../../lib/error')
 
 describe('schema://trop/front/get_message_req#/query', () => {
     let schema = '//trop/front/get_message_req#/query'
@@ -13,20 +13,20 @@ describe('schema://trop/front/get_message_req#/query', () => {
     })
 
     it('verify(query)', async () => {
-        dflow.verify(schema, {})
+        dflow.raw_verify(schema, {})
     })
 
     it('verify(query)', async () => {
-        dflow.verify(schema, {
+        dflow.raw_verify(schema, {
             p: 2
         })
     })
 
     it('verify(query) => error', async () => {
         assert.throws(() => {
-            dflow.verify(schema, {
+            dflow.raw_verify(schema, {
                 page: 1,
             })
-        }, Http400)
+        }, InvalidData)
     })
 })

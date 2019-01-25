@@ -24,7 +24,7 @@ describe('post /account', () => {
 
         await http_test(res, () => {
             assert.equal(res.status, 201)
-            dflow.verify('//trop/front/post_account_res#/body', res.body)
+            dflow.raw_verify('//trop/front/post_account_res#/body', res.body)
         })
     })
 
@@ -37,7 +37,7 @@ describe('post /account', () => {
 
         await http_test(res, () => {
             assert.equal(res.status, 201)
-            dflow.verify('//trop/front/post_account_res#/body', res.body)
+            dflow.raw_verify('//trop/front/post_account_res#/body', res.body)
         })
     })
 
@@ -50,7 +50,7 @@ describe('post /account', () => {
 
         await http_test(res, () => {
             assert.equal(res.status, 201)
-            dflow.verify('//trop/front/post_account_res#/body', res.body)
+            dflow.raw_verify('//trop/front/post_account_res#/body', res.body)
         })
     })
 
@@ -63,7 +63,7 @@ describe('post /account', () => {
 
         await http_test(res, () => {
             assert.equal(res.status, 201)
-            dflow.verify('//trop/front/post_account_res#/body', res.body)
+            dflow.raw_verify('//trop/front/post_account_res#/body', res.body)
         })
     })
 
@@ -76,7 +76,7 @@ describe('post /account', () => {
 
         await http_test(res, () => {
             assert.equal(res.status, 400)
-            dflow.verify('//trop/front/http_400_res#/body', res.body)
+            dflow.raw_verify('//trop/front/http_4xx_res#/body', res.body)
         })
     })
 
@@ -89,7 +89,7 @@ describe('post /account', () => {
 
         await http_test(res, () => {
             assert.equal(res.status, 409)
-            dflow.verify('//trop/front/http_409_res#/body', res.body)
+            dflow.raw_verify('//trop/front/http_4xx_res#/body', res.body)
         })
     })
 })

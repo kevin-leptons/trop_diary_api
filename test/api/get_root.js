@@ -20,7 +20,7 @@ describe('get /', () => {
 
         await http_test(res, () => {
             assert.equal(res.status, 200)
-            dflow.verify('//trop/front/get_root_res#/body', res.body)
+            dflow.raw_verify('//trop/front/get_root_res#/body', res.body)
         })
     })
 })

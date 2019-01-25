@@ -24,7 +24,7 @@ describe('get /message/item/:id', () => {
 
         await http_test(res, () => {
             assert.equal(res.status, 200)
-            dflow.verify('//trop/front/get_message_item_res#/body', res.body)
+            dflow.raw_verify('//trop/front/get_message_item_res#/body', res.body)
         })
     })
 
@@ -33,7 +33,7 @@ describe('get /message/item/:id', () => {
 
         await http_test(res, () => {
             assert.equal(res.status, 404)
-            dflow.verify('//trop/front/http_404_res#/body', res.body)
+            dflow.raw_verify('//trop/front/http_4xx_res#/body', res.body)
         })
     })
 
@@ -42,7 +42,7 @@ describe('get /message/item/:id', () => {
 
         await http_test(res, () => {
             assert.equal(res.status, 400)
-            dflow.verify('//trop/front/http_400_res#/body', res.body)
+            dflow.raw_verify('//trop/front/http_4xx_res#/body', res.body)
         })
     })
 })

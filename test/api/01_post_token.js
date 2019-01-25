@@ -27,10 +27,10 @@ describe('post /token', () => {
 
         await http_test(res, () => {
             assert.equal(res.status, 200)
-            dflow.verify('//trop/front/post_token_res#/body', res.body)
+            dflow.raw_verify('//trop/front/post_token_res#/body', res.body)
 
             let access_token = jwt.decode(res.body.access_token)
-            dflow.verify('//trop/front/access_token', access_token)
+            dflow.raw_verify('//trop/front/access_token', access_token)
 
             req.set_token(res.body.access_token)
             box.set_key('token', res.body)
@@ -47,10 +47,10 @@ describe('post /token', () => {
 
         await http_test(res, () => {
             assert.equal(res.status, 200)
-            dflow.verify('//trop/front/post_token_res#/body', res.body)
+            dflow.raw_verify('//trop/front/post_token_res#/body', res.body)
 
             let access_token = jwt.decode(res.body.access_token)
-            dflow.verify('//trop/front/access_token', access_token)
+            dflow.raw_verify('//trop/front/access_token', access_token)
 
             let old_access_token = box.get_key('access_token')
             assert.equal(access_token.role, old_access_token.role)
@@ -66,7 +66,7 @@ describe('post /token', () => {
         })
 
         await http_test(res, () => {
-            dflow.verify('//trop/front/http_400_res#/body', res.body)
+            dflow.raw_verify('//trop/front/http_4xx_res#/body', res.body)
         })
     })
 
@@ -77,7 +77,7 @@ describe('post /token', () => {
 
         await http_test(res, () => {
             assert.equal(res.status, 400)
-            dflow.verify('//trop/front/http_400_res#/body', res.body)
+            dflow.raw_verify('//trop/front/http_4xx_res#/body', res.body)
         })
     })
 
@@ -89,7 +89,7 @@ describe('post /token', () => {
 
         await http_test(res, () => {
             assert.equal(res.status, 400)
-            dflow.verify('//trop/front/http_400_res#/body', res.body)
+            dflow.raw_verify('//trop/front/http_4xx_res#/body', res.body)
         })
     })
 
@@ -102,7 +102,7 @@ describe('post /token', () => {
 
         await http_test(res, () => {
             assert.equal(res.status, 401)
-            dflow.verify('//trop/front/http_401_res#/body', res.body)
+            dflow.raw_verify('//trop/front/http_4xx_res#/body', res.body)
         })
     })
 
@@ -115,7 +115,7 @@ describe('post /token', () => {
 
         await http_test(res, () => {
             assert.equal(res.status, 401)
-            dflow.verify('//trop/front/http_401_res#/body', res.body)
+            dflow.raw_verify('//trop/front/http_4xx_res#/body', res.body)
         })
     })
 
@@ -127,7 +127,7 @@ describe('post /token', () => {
 
         await http_test(res, () => {
             assert.equal(res.status, 400)
-            dflow.verify('//trop/front/http_400_res#/body', res.body)
+            dflow.raw_verify('//trop/front/http_4xx_res#/body', res.body)
         })
     })
 
@@ -139,7 +139,7 @@ describe('post /token', () => {
 
         await http_test(res, () => {
             assert.equal(res.status, 401)
-            dflow.verify('//trop/front/http_401_res#/body', res.body)
+            dflow.raw_verify('//trop/front/http_4xx_res#/body', res.body)
         })
     })
 })
