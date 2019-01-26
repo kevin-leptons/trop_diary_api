@@ -29,18 +29,18 @@ GET /account&q=mail&p=2
 ```json
 [
     {
-        "_id": "5c44450ca1a01467ee3ddc12",
-        "email": "root@mail.com"
-        ,"role": "root",
-        "created": "2019-01-20T09:53:16.156Z",
-        "modified": "2019-01-20T09:53:16.156Z"
+        "_id": "18cbf28e-b878-42c1-8d0f-89bfb9996629",
+        "email": "root@mail.com",
+        "role": "root",
+        "created": 1548499673,
+        "modified": 1548499673
     },
     {
-        "_id": "5c44450ca1a01467ee3ddc15",
+        "_id": "18cbf28e-b878-42c1-8d0f-89bfb9996629",
         "email": "reader@mail.com",
         "role": "r",
-        "created": "2019-01-20T09:53:16.385Z",
-        "modified": "2019-01-20T09:53:16.385Z"
+        "created": 1548499673,
+        "modified": 1548499673
     }
 ]
 ```
@@ -75,7 +75,7 @@ GET /account&q=mail&p=2
 
 ```json
 {
-    "_id": "5c42d0e4a0a798428f4c0cb0"
+    "_id": "18cbf28e-b878-42c1-8d0f-89bfb9996629"
 }
 ```
 
