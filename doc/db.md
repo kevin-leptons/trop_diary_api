@@ -23,11 +23,9 @@
 * `created` / integer, as UNIX timestamp
 * `content` / any, as content of message
 
-## syslog
+## error
 
 * `_id` / UUID
-* `level` / integer, 0 is `info`, 1 is `debug`, 2 is `warn`, 3 is `error` and
-  4 is `fatal`
 * `created` / integer, as UNIX timestamp
 * `req` / object, as HTTP request message
     * `method` / string, HTTP method, one of `get`, `post`, `put`, `patch`
@@ -37,5 +35,6 @@
     * `body` / string | object | array
 * `res` / object, as HTTP response message
     * `status` / integer, HTTP status code
-    * `body` / string | object | array
-* `error` / string, stack trace if an error occurs
+* `front` / any, error information which sent to client
+* `back` / HttpError, http error was throw
+* `origin` / any, pre-error before throw a http error
