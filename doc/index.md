@@ -16,6 +16,8 @@
     * [account](api_res_account.md)
     * [message](api_res_message.md)
 
+## [Database](db.md)
+
 ## Development
 
 * [File System](dev_fs.md)
