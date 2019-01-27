@@ -20,9 +20,9 @@ cp deb/conf.json dest/etc/trop_diary_api
 mkdir -vp dest/etc/systemd/system
 cp deb/trop-diary-api.service dest/etc/systemd/system
 
-# version
-mkdir -vp dest/DEBIAN
-cp deb/control dest/DEBIAN/control
+# package specification
+cp -r deb dest/DEBIAN
+rm dest/DEBIAN/trop-diary-api.service
 sed -i -e "s/\$PKG_NAME/${PKG_NAME}/g" dest/DEBIAN/control
 sed -i -e "s/\$PKG_VERSION/${PKG_VERSION}/g" dest/DEBIAN/control
 

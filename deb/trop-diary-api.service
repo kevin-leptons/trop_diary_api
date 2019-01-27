@@ -5,3 +5,6 @@ After=network.target
 [Service]
 Restart=always
 ExecStart=/opt/trop_diary_api/bin/cli.js start
+
+[Install]
+WantedBy=multi-user.target

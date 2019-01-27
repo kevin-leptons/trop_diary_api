@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.12.0
+
+* Fix can not enable systemd service
+* Do not override `/etc/trop_diary_api/conf.json` on update Debian package
+
 ## 0.11.0
 
 * Drop install from NPM registry
