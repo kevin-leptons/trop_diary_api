@@ -10,11 +10,11 @@
 
 ### deploy/trop_diary_api/conf.json
 
-* format - checkout [Configuration File](conf_file.md)
+* format - checkout [Configuration File](use_conf_file.md)
 
 ### deploy/trop_diary_api/private.pem
 
-* format - checkout [Configuration File](conf_file.md)
+* format - checkout [Configuration File](use_conf_file.md)
 
 ### deploy/docker_compose.yaml
 

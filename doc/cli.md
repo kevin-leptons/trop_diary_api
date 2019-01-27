@@ -13,4 +13,4 @@ start [--conf-file value] [--clean]
 
 ## Configuration File
 
-See [Configuration File](conf_file.md)
+See [Configuration File](use_conf_file.md)

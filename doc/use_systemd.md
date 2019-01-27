@@ -10,4 +10,4 @@ systemctl start trop-diary-api.service
 
 ## Files
 
-Checkout [Configuration File](conf_file.md)
+Checkout [Configuration File](use_conf_file.md)
