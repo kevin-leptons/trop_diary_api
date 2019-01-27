@@ -18,7 +18,14 @@ Work on Debian-like operating system
 ## To Docker Hub Registry
 
 ```bash
-docker build -t trop/diary_api .
+./dist_docker.sh
+```
+
+* Docker image result is `trop/diary_api`
+
+To publish to Docker Hub Registry
+
+```bash
 docker tag trop/diary_api trop/diary_api:VERSION
 docker push trop/diary_api:VERSION
 ```
