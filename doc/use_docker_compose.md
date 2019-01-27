@@ -29,7 +29,7 @@ services:
         volumes:
             - ./trop_diary_api:/etc/trop_diary_api
         ports:
-            - 8080:80
+            - 6969:6969
 ```
 
 ## Start

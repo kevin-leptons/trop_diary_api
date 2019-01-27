@@ -3,6 +3,7 @@
 ## 0.11.0
 
 * Drop install from NPM registry
+* Change default listen port from `80` to `6969`
 * Add deployment to systemd via Debian package manager
 * Add non-private-key mode, it runs with random secret key
 
