@@ -1,0 +1,7 @@
+[Unit]
+Description=Logging Service
+After=network.target
+
+[Service]
+Restart=always
+ExecStart=/opt/trop_diary_api/bin/cli.js start

@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.11.0
+
+* Drop install from NPM registry
+* Add deployment to systemd via Debian package manager
+* Add non-private-key mode, it runs with random secret key
+
 ## v0.10.0
 
 * Index on `message` document

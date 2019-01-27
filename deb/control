@@ -1,0 +1,8 @@
+Package: $PKG_NAME
+Version: $PKG_VERSION
+Section: base
+Priority: optional
+Architecture: all
+Depends: nodejs (>=10)
+Maintainer: Kevin Leptons<kevin.leptons@gmail.com>
+Description: Logging Service

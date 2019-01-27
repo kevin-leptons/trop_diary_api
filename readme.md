@@ -4,8 +4,9 @@ Logging API Endpoint - Ready for logging, tracing and debuging.
 
 ## Usage
 
-* Via [NPM Registry & Shell](doc/use_npm.md)
+* Via [Debian Package & systemd](doc/use_npm.md)
 * Via [Docker Hub Registry & Docker Compose](doc/use_docker_compose.md)
+* [Configuration File](doc/conf_file.md)
 
 ## References
 

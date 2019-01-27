@@ -2,8 +2,9 @@
 
 ## Usage
 
-* [NPM Registry & Shell](use_npm.md)
+* [Debian Package & Systemd](use_systemd.md)
 * [Docker Hub Registry & Docker Compose](use_docker_compose.md)
+* [Configuration File](conf_file.md)
 
 ## APIs
 

@@ -1,10 +1,19 @@
 # Publish
 
-## To NPM Registry
+Befre publish, please check
 
 * Update changes in `changelog.md`
 * Up version in `package.json`
-* Run `npm publish` to push new version to `npm registry`.
+
+## To Debian Package
+
+Work on Debian-like operating system
+
+```bash
+./dist_deb.sh
+```
+
+* Result will put into `dist/` directory
 
 ## To Docker Hub Registry
 
