@@ -6,7 +6,7 @@ Logging API Endpoint - Ready for logging, tracing and debuging.
 
 * Via [Debian Package & systemd](doc/use_systemd.md)
 * Via [Docker Hub Registry & Docker Compose](doc/use_docker_compose.md)
-* [Configuration File](doc/conf_file.md)
+* [Configuration File](doc/use_conf_file.md)
 
 ## References
 
