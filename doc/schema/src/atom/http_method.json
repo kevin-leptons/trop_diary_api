@@ -1,0 +1,5 @@
+{
+    "$id": "//atom/http_method",
+    "type": "string",
+    "enum": ["get", "post", "put", "patch", "delete", "option"]
+}

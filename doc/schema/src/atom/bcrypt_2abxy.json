@@ -1,0 +1,5 @@
+{
+    "$id": "//atom/bcrypt_2abxy",
+    "type": "string",
+    "pattern": "^\\$2(a|b|x|y)\\$\\d+\\$[a-zA-Z0-9.\/]{53,}$"
+}

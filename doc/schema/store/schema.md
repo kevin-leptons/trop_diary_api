@@ -1,6 +1,6 @@
 # account
 
-[](src/store/account.json ':include :type=code json')
+[](../src/store/account.json ':include :type=code json')
 
 * `_id`, identity of account
 * `email`, as username
@@ -11,14 +11,14 @@
 
 # refresh_token
 
-[](src/store/refresh_token.json ':include :type=code json')
+[](../src/store/refresh_token.json ':include :type=code json')
 
 * `_id` / identity of refresh token, it is also refresh token
 * `account_id`, correspond account
 
 # message
 
-[](src/store/message.json ':include :type=code json')
+[](../src/store/message.json ':include :type=code json')
 
 * `_id`, identity of message
 * `level` / integer, 0 is `info`, 1 is `debug`, 2 is `warn`, 3 is `error` and
@@ -29,7 +29,7 @@
 
 # error
 
-[](src/store/error.json ':include :type=code json')
+[](../src/store/error.json ':include :type=code json')
 
 * `_id`, identity of error
 * `created`, created time

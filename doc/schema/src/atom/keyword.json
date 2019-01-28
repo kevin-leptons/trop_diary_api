@@ -1,0 +1,5 @@
+{
+    "$id": "//atom/keyword",
+    "type": "string",
+    "pattern": "^[a-zA-Z0-9 ]{1,32}$"
+}

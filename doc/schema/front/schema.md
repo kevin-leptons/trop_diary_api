@@ -1,22 +1,22 @@
 # http_204
 
-[](src/front/http_204.json ':include :type=code json')
+[](../src/front/http_204.json ':include :type=code json')
 
 # http_4xx
 
-[](src/front/http_4xx.json ':include :type=code json')
+[](../src/front/http_4xx.json ':include :type=code json')
 
 # access_token
 
-[](src/front/access_token.json ':include :type=code json')
+[](../src/front/access_token.json ':include :type=code json')
 
 # access_token_key
 
-[](src/front/access_token_key.json ':include :type=code json')
+[](../src/front/access_token_key.json ':include :type=code json')
 
 # post_token
 
-[](src/front/post_token.json ':include :type=code json')
+[](../src/front/post_token.json ':include :type=code json')
 
 * `res.body`
     * `type` - type of token, always is `bearer`
@@ -33,7 +33,7 @@
 
 # post_key
 
-[](src/front/post_key.json ':include :type=code json')
+[](../src/front/post_key.json ':include :type=code json')
 
 * `req.body`
     * `role`, role for key
@@ -44,7 +44,7 @@
 
 # get_root
 
-[](src/front/get_root.json ':include :type=code json')
+[](../src/front/get_root.json ':include :type=code json')
 
 * `res.body`
     * `name`, name of service.
@@ -54,7 +54,7 @@
 
 # get_account
 
-[](src/front/get_account.json ':include :type=code json')
+[](../src/front/get_account.json ':include :type=code json')
 
 * `req.query`
     * `q`, keyword to search on `email`
@@ -68,26 +68,26 @@
 
 # post_account
 
-[](src/front/post_account.json ':include :type=code json')
+[](../src/front/post_account.json ':include :type=code json')
 
 * `res.body`
     * `_id` - identity of account
 
 # patch_account_password
 
-[](src/front/patch_account_password.json ':include :type=code json')
+[](../src/front/patch_account_password.json ':include :type=code json')
 
 # patch_account_role
 
-[](src/front/patch_account_role.json ':include :type=code json')
+[](../src/front/patch_account_role.json ':include :type=code json')
 
 # del_account
 
-[](src/front/del_account.json ':include :type=code json')
+[](../src/front/del_account.json ':include :type=code json')
 
 ## get_message
 
-[](src/front/get_message.json ':include :type=code json')
+[](../src/front/get_message.json ':include :type=code json')
 
 * `req.query`
     * `p` - page index
@@ -99,11 +99,11 @@
 
 # get_message_item
 
-[](src/front/get_message_item.json ':include :type=code json')
+[](../src/front/get_message_item.json ':include :type=code json')
 
 * `req.param`
     * `id` - identity of message
 
 # post_message
 
-[](src/front/post_message.json ':include :type=code json')
+[](../src/front/post_message.json ':include :type=code json')

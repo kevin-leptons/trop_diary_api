@@ -1,0 +1,34 @@
+{
+    "$id": "//trop/front/get_message_item",
+    "req": {
+        "param": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["id"],
+            "properties": {
+                "id": {"$ref": "//atom/log_id"}
+            }
+        }
+    },
+    "res": {
+        "body": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "_id",
+                "ip",
+                "created",
+                "level",
+                "message"
+            ],
+            "properties": {
+                "_id": {"$ref": "//atom/log_id"},
+                "ip": {"$ref": "//atom/ip"},
+                "created": {"$ref": "//atom/timestamp"},
+                "level": {"$ref": "//atom/log_level"},
+                "label": {"$ref": "//atom/log_label"},
+                "message": {"$ref": "//atom/log_message"}
+            }
+        }
+    }
+}

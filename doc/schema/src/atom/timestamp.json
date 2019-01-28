@@ -1,0 +1,5 @@
+{
+    "$id": "//atom/timestamp",
+    "type": "integer",
+    "minimum": 0
+}

@@ -1,0 +1,47 @@
+{
+    "$id": "//trop/front/post_token",
+    "req": {
+        "body": {
+            "oneOf": [
+                {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": ["grant_type", "username", "password"],
+                    "properties": {
+                        "grant_type": {
+                            "enum": ["password"]
+                        },
+                        "username": {"$ref": "//atom/email"},
+                        "password": {"$ref": "//atom/password"}
+                    }
+                },
+                {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": ["grant_type", "refresh_token"],
+                    "properties": {
+                        "grant_type": {
+                            "enum": ["refresh_token"]
+                        },
+                        "refresh_token": {"$ref": "//atom/uuidv4"}
+                    }
+                }
+            ]
+        }
+    },
+    "res": {
+        "body": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["type", "expires_in", "access_token", "refresh_token"],
+            "properties": {
+                "type": {
+                    "enum": ["bearer"]
+                },
+                "expires_in": {"$ref": "//atom/uint"},
+                "access_token": {"$ref": "//atom/jwt"},
+                "refresh_token": {"$ref": "//atom/uuidv4"}
+            }
+        }
+    }
+}

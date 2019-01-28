@@ -1,0 +1,11 @@
+{
+    "$id": "//atom/name",
+    "restrict": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9_]{1,31}$"
+    },
+    "package": {
+        "type": "string",
+        "pattern": "^[a-z0-9_@/]{2,32}$"
+    }
+}

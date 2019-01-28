@@ -1,0 +1,18 @@
+{
+    "$id": "//trop/front/access_token_key",
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["role", "iat", "iss", "exp"],
+    "properties": {
+        "role": {
+            "type": "string",
+            "enum": ["r", "w", "rw"]
+        },
+        "iat": {"$ref": "//atom/uint"},
+        "iss": {
+            "type": "string",
+            "pattern": "^@trop/diary_api$"
+        },
+        "exp": {"$ref": "//atom/uint"}
+    }
+}

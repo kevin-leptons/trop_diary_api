@@ -1,0 +1,12 @@
+{
+    "$id": "//store/message",
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["_id", "level", "created", "content"],
+    "properties": {
+        "_id": {"$ref": "//atom/log_id"},
+        "level": {"$ref": "//atom/log_level"},
+        "created": {"$ref": "//atom/timestamp"},
+        "content": {}
+    }
+}

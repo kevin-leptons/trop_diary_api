@@ -1,0 +1,12 @@
+{
+    "$id": "//atom/error_req",
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["method", "path"],
+    "properties": {
+        "method": {"$ref": "//atom/http_method"},
+        "path": {"type": "string"},
+        "query": {"type": "object"},
+        "body": {}
+    }
+}

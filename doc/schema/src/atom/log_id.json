@@ -1,0 +1,4 @@
+{
+    "$id": "//atom/log_id",
+    "$ref": "//atom/uuidv4"
+}

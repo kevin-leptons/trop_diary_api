@@ -1,0 +1,5 @@
+{
+    "$id": "//atom/uint",
+    "type": "integer",
+    "minimum": 0
+}

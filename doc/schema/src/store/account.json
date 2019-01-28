@@ -1,0 +1,14 @@
+{
+    "$id": "//store/account",
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["_id", "email", "created", "modified", "password", "role"],
+    "properties": {
+        "_id": {"$ref": "//atom/account_id"},
+        "email": {"$ref": "//atom/email"},
+        "created": {"$ref": "//atom/timestamp"},
+        "modifed": {"$ref": "//atom/timestamp"},
+        "password": {"$ref": "//atom/bcrypt_2abxy"},
+        "role": {"$ref": "//atom/account_role"}
+    }
+}
