@@ -21,7 +21,7 @@ describe('get /message', () => {
         await http_test(res, () => {
             assert.equal(res.status, 200)
             assert(res.body instanceof Array)
-            dflow.raw_verify('//trop/front/get_message_res#/body', res.body)
+            dflow.raw_verify('//trop/front/get_message#/res/body', res.body)
         })
     })
 
@@ -34,7 +34,7 @@ describe('get /message', () => {
         await http_test(res, () => {
             assert.equal(res.status, 200)
             assert(res.body instanceof Array)
-            dflow.raw_verify('//trop/front/get_message_res#/body', res.body)
+            dflow.raw_verify('//trop/front/get_message#/res/body', res.body)
 
             assert(res.body.length === 2)
             for (let item of res.body) {
@@ -62,7 +62,7 @@ describe('get /message', () => {
             assert.equal(res.status, 200)
             assert(res.body instanceof Array)
             assert.equal(res.body.length, 6)
-            dflow.raw_verify('//trop/front/get_message_res#/body', res.body)
+            dflow.raw_verify('//trop/front/get_message#/res/body', res.body)
         })
     })
 
@@ -107,7 +107,7 @@ describe('get /message', () => {
             assert.equal(res.status, 200)
             assert(res.body instanceof Array)
             assert.notEqual(res.body.length, 0)
-            dflow.raw_verify('//trop/front/get_message_res#/body', res.body)
+            dflow.raw_verify('//trop/front/get_message#/res/body', res.body)
         })
     })
 
@@ -131,7 +131,7 @@ describe('get /message', () => {
         await http_test(res, () => {
             assert.equal(res.status, 200)
             assert(res.body instanceof Array)
-            dflow.raw_verify('//trop/front/get_message_res#/body', res.body)
+            dflow.raw_verify('//trop/front/get_message#/res/body', res.body)
         })
     })
 
@@ -154,7 +154,7 @@ describe('get /message', () => {
 
         await http_test(res, () => {
             assert.equal(res.status, 400)
-            dflow.raw_verify('//trop/front/http_4xx_res#/body', res.body)
+            dflow.raw_verify('//trop/front/http_4xx#/res/body', res.body)
         })
     })
 
@@ -165,7 +165,7 @@ describe('get /message', () => {
 
         await http_test(res, () => {
             assert.equal(res.status, 400)
-            dflow.raw_verify('//trop/front/http_4xx_res#/body', res.body)
+            dflow.raw_verify('//trop/front/http_4xx#/res/body', res.body)
         })
     })
 
@@ -176,7 +176,7 @@ describe('get /message', () => {
 
         await http_test(res, () => {
             assert.equal(res.status, 400)
-            dflow.raw_verify('//trop/front/http_4xx_res#/body', res.body)
+            dflow.raw_verify('//trop/front/http_4xx#/res/body', res.body)
         })
     })
 })

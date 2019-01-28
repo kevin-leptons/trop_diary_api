@@ -25,7 +25,7 @@ describe('post /key', () => {
 
         await http_test(res, () => {
             assert.equal(res.status, 200)
-            dflow.raw_verify('//trop/front/post_key_res#/body', res.body)
+            dflow.raw_verify('//trop/front/post_key#/res/body', res.body)
 
             let access_token = jwt.decode(res.body.access_token)
             dflow.raw_verify('//trop/front/access_token_key', access_token)
@@ -39,7 +39,7 @@ describe('post /key', () => {
         await http_test(res, () => {
             assert.equal(res.status, 200)
             assert(res.body instanceof Array)
-            dflow.raw_verify('//trop/front/get_message_res#/body', res.body)
+            dflow.raw_verify('//trop/front/get_message#/res/body', res.body)
         })
     })
 })

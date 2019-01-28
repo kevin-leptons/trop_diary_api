@@ -6,13 +6,13 @@
 npm test
 ```
 
-* local server
+* start local server
 
 ```bash
 npm start
 ```
 
-* docker
+* start local docker
 
 ```bash
 docker-compose -f docker/docker_compose.yaml up -d

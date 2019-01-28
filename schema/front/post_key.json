@@ -1,0 +1,34 @@
+{
+    "$id": "//trop/front/post_key",
+    "req": {
+        "body": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["role"],
+            "properties": {
+                "role": {
+                    "type": "string",
+                    "enum": ["r", "w", "rw"]
+                }
+            }
+        }
+    },
+    "res": {
+        "body": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["type", "access_token"],
+            "properties": {
+                "type": {
+                    "enum": ["key"]
+                },
+                "access_token": {"$ref": "//atom/jwt"},
+                "expires_in": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 0
+                }
+            }
+        }
+    }
+}

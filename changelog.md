@@ -3,7 +3,9 @@
 ## v0.12.0
 
 * Fix can not enable systemd service
-* Do not override `/etc/trop_diary_api/conf.json` on update Debian package
+* Fix override `/etc/trop_diary_api/conf.json` on update Debian package
+* Use `docsify` as document reader
+* Restructure Data Schema
 
 ## 0.11.0
 

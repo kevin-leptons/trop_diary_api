@@ -2,11 +2,14 @@
 
 Logging API Endpoint - Ready for logging, tracing and debuging.
 
-## Usage
+**WARN:** *From 2019-01-29 this package WILL NOT distribute on NPM Registry
+any more, it is stop at v0.12.0. Please check for Debian Package or
+Docker image!*
 
-* Via [Debian Package & systemd](doc/use_systemd.md)
-* Via [Docker Hub Registry & Docker Compose](doc/use_docker_compose.md)
-* [Configuration File](doc/use_conf_file.md)
+## Installation
+
+* [Debian Package](doc/install_debian_package.md)
+* [Docker Compose](doc/install_docker_compose.md)
 
 ## References
 

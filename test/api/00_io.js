@@ -21,7 +21,7 @@ describe('io data', () => {
         set('content-type', 'text').
         expect(415)
 
-        dflow.verify('//trop/front/http_4xx_res#/body', res.body)
+        dflow.verify('//trop/front/http_4xx#/res/body', res.body)
     })
 
     it('post /message, accept=text => 406', async () => {
@@ -30,7 +30,7 @@ describe('io data', () => {
         set('accept', 'text').
         expect(406)
 
-        dflow.verify('//trop/front/http_4xx_res#/body', res.body)
+        dflow.verify('//trop/front/http_4xx#/res/body', res.body)
     })
 
     it('get /does_not_exists_resource => 404', async () => {
@@ -38,6 +38,6 @@ describe('io data', () => {
         let res = await req.get('/' + path).
         expect(404)
 
-        dflow.verify('//trop/front/http_4xx_res#/body', res.body)
+        dflow.verify('//trop/front/http_4xx#/res/body', res.body)
     })
 })

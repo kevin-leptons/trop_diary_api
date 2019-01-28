@@ -34,7 +34,7 @@ async function main() {
         console.log(_block('front'))
         console.log(JSON.stringify(log.front, null, 2))
         console.log(_block('back'))
-        console.log(JSON.stringify(log.back, null, 2))
+        console.log(log.back)
         console.log(_block('origin'))
         console.log(log.origin)
     }

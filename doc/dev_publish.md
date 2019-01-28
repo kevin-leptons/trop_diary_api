@@ -1,6 +1,6 @@
 # Publish
 
-Befre publish, please check
+Before publish, please check
 
 * Update changes in `changelog.md`
 * Up version in `package.json`
@@ -22,8 +22,7 @@ Work on Debian-like operating system
 ```
 
 * Docker image result is `trop/diary_api`
-
-To publish to Docker Hub Registry
+* Create a tag with VERSION and push to Docker Hub
 
 ```bash
 docker tag trop/diary_api trop/diary_api:VERSION

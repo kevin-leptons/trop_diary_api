@@ -20,7 +20,7 @@ describe('delete /account/:username', () => {
 
         await http_test(res, () => {
             assert.equal(res.status, 204)
-            dflow.raw_verify('//trop/front/http_204_res#/body', res.body)
+            dflow.raw_verify('//trop/front/http_204#/res/body', res.body)
         })
     })
 
@@ -29,7 +29,7 @@ describe('delete /account/:username', () => {
 
         await http_test(res, () => {
             assert.equal(res.status, 400)
-            dflow.raw_verify('//trop/front/http_4xx_res#/body', res.body)
+            dflow.raw_verify('//trop/front/http_4xx#/res/body', res.body)
         })
     })
 })

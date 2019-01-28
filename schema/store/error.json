@@ -1,0 +1,15 @@
+{
+    "$id": "//store/error",
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["_id", "created", "req", "res"],
+    "properties": {
+        "_id": {"$ref": "//atom/uuidv4"},
+        "created": {"$ref": "//atom/timestamp"},
+        "req": {"$ref": "//atom/error_req"},
+        "res": {"$ref": "//atom/error_res"},
+        "front": {},
+        "back": {},
+        "origin": {}
+    }
+}

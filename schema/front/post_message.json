@@ -1,0 +1,25 @@
+{
+    "$id": "//trop/front/post_message",
+    "req": {
+        "body": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["level", "message"],
+            "properties": {
+                "level": {"$ref": "//atom/log_level"},
+                "label": {"$ref": "//atom/log_label"},
+                "message": {"$ref": "//atom/log_message"}
+            }
+        }
+    },
+    "res": {
+        "body": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["_id"],
+            "properties": {
+                "_id": {"$ref": "//atom/log_id"}
+            }
+        }
+    }
+}

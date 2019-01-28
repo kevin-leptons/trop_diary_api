@@ -1,0 +1,10 @@
+{
+    "$id": "//store/refresh_token",
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["_id", "account_id"],
+    "properties": {
+        "_id": {"$ref": "//atom/uuidv4"},
+        "account_id": {"$ref": "//atom/account_id"}
+    }
+}
