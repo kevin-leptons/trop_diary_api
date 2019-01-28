@@ -1,6 +1,6 @@
 # diary_api
 
-Logging Service API - Ready for write/read/trace log messages on distributed
+Logging Service API - Ready for logging/tracing messages on distributed
 systems.
 
 **WARN:** *From 2019-01-29 this package WILL NOT distribute on NPM Registry

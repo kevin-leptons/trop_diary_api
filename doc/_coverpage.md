@@ -1,9 +1,9 @@
 # @trop/diary_api <small>v0.12.0</small>
 
-> Lightweight Logging Service APIS
+> Logging Service APIS for Human
 
-- Simple to read/write/trace log messages on distributed systems
-- Client Command Line and Programming Library ready
+- Ready to logging/tracing messages on distributed systems
+- Come with Client Command Line and Programming Library
 - High Performance, Scalable Storage by MongoDB
 - Available on Debian Package and Docker Image
 
