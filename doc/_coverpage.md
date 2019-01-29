@@ -2,7 +2,7 @@
 
 > Logging Service APIS for Human
 
-- Ready to logging/tracing messages on distributed systems
+- Ready for logging/tracing messages on distributed systems
 - Come with Client Command Line and Programming Library
 - High Performance, Scalable Storage by MongoDB
 - Available on Debian Package and Docker Image
