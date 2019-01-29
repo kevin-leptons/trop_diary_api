@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.13.0
+
+* Enable and start service on Debian Package is installed
+
 ## v0.12.0
 
 * Fix can not enable systemd service

@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+set -e
+set -x
+
+SERVICE="trop-diary-api.service"
+
+if systemctl is-active --quiet "$SERVICE"; then
+    systemctl stop "$SERVICE"
+fi

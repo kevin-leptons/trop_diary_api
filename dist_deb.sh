@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 PKG_NAME="trop-diary-api"
-PKG_VERSION="0.11.0"
+PKG_VERSION="0.13.0"
 
 rm -rf dest
 
