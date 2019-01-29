@@ -1,6 +1,6 @@
 {
   "name": "@trop/diary_api",
-  "version": "0.13.0",
+  "version": "0.14.0",
   "description": "Logging API Service",
   "bin": {
     "trop-diary-api": "bin/cli.js"
