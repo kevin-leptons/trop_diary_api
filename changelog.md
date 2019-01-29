@@ -2,7 +2,8 @@
 
 ## v0.13.0
 
-* Enable and start service on Debian Package is installed
+* Enable and start service on Debian package is installed
+* Use a tiny repository for Debian package at `packagecloud.io`
 
 ## v0.12.0
 
