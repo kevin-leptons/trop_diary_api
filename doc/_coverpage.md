@@ -1,6 +1,6 @@
 ![logo](asset/logo.png)
 
-# @trop/diary_api <small>v0.12.0</small>
+# @trop/diary_api <small>v0.13.0</small>
 
 > Logging Service APIS for Human
 
