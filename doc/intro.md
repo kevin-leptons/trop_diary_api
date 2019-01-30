@@ -9,9 +9,8 @@
   don't you think they have good enough a logging tool? Why don't you pick
   a old one? You are insane!.
 * **A**: Ha ha, bull shit. Don't re-create wheels? So why they make E-Book,
-  books is already exist, a long time ago. A guy named Elon Musk makes new
-  cars and rockets, it is also already exists right? LOL, why?, to make
-  it better, that's all.
+  books is already exist, a long time ago. LOL, why?, to make it better,
+  ... or jus for fun,that's all.
 * **Q**: Any ways, you should consider a old tool, for save time.
 * **A**: OK, up to you, good talking, bye!
 

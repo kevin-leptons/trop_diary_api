@@ -12,3 +12,5 @@ apt install trop-diary-api
 ```
 
 For more configurations, checkout [Configuration Files](conf_conf_json.md)
+
+Now, API Endpoint is ready at `http://localhost:6969`

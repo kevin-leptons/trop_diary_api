@@ -21,3 +21,11 @@ services:
         ports:
             - 6969:6969
 ```
+
+**start services**
+
+```bash
+docker-compose -f deploy/docker_compose.yaml up -d
+```
+
+Now, API Endpoint is ready at `http://localhost:6969`
