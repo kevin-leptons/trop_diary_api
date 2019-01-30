@@ -11,5 +11,5 @@
 
 [Github](https://github.com/kevin-leptons/trop_diary_api)
 [@trop/diary_cli](https://github.com/kevin-leptons/trop_diary_cli)
-[@trop/diary_nodejs](https://github.com/kevin-leptons/trop_diary_nodejs)
+[@trop/diary_nodejs](https://trop-diary-nodejs.netlify.com)
 [Get Started](intro.md)
