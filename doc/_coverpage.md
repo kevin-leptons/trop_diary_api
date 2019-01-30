@@ -10,6 +10,6 @@
 - Available on Debian Package and Docker Image
 
 [Github](https://github.com/kevin-leptons/trop_diary_api)
-[@trop/diary_cli](https://github.com/kevin-leptons/trop_diary_cli)
+[@trop/diary_cli](https://trop-diary-cli.netlify.com)
 [@trop/diary_nodejs](https://trop-diary-nodejs.netlify.com)
 [Get Started](intro.md)

@@ -13,7 +13,7 @@ Docker image!*
 
 ## References
 
-* [@trop/diary_cli](https://www.npmjs.com/package/@trop/diary_cli) -
+* [@trop/diary_cli](https://trop-diary-cli.netlify.com) -
   Client command line for interacting with API Endpoint
-* [@trop/diary_nodejs](https://www.npmjs.com/package/@trop/diary_nodejs) -
+* [@trop/diary_nodejs](https://trop-diary-nodejs.netlify.com) -
   Node.js client library for interacting with API Endpoint
