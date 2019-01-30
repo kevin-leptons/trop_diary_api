@@ -41,7 +41,7 @@
 
 * **Q**: That's all?
 * **A**: Not really, you are human, you need tools for interacting with
-  `@trop/diary_api`. [@trop/diary_cli](https://github.com/kevin-leptons/trop_diary_cli)
+  `@trop/diary_api`. [@trop/diary_cli](https://trop-diary-cli.netlify.com)
   to control APIs via command line, create accounts, retrieve messages...
-  [@trop/diary_nodejs](https://github.com/kevin-leptons/trop_diary_nodejs)
+  [@trop/diary_nodejs](https://trop-diary-nodejs.netlify.com)
   to connect with APIs via programming language.
