@@ -4,7 +4,7 @@
     "additionalProperties": false,
     "required": ["_id", "created", "req", "res"],
     "properties": {
-        "_id": {"$ref": "//atom/uuidv4"},
+        "_id": {"$ref": "//atom/uuid"},
         "created": {"$ref": "//atom/timestamp"},
         "req": {"$ref": "//atom/error_req"},
         "res": {"$ref": "//atom/error_res"},

@@ -1,5 +1,0 @@
-{
-    "$id": "//atom/pint",
-    "type": "integer",
-    "minimum": 1
-}

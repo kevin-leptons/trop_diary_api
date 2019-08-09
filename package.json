@@ -7,7 +7,7 @@
   },
   "scripts": {
     "test": "mocha --recursive test/",
-    "start": "node bin/cli.js start --conf-file test/conf/conf.json"
+    "start": "node bin/cli.js start --conf-file test/conf/conf.yaml"
   },
   "repository": {
     "type": "git",
@@ -26,8 +26,11 @@
   "homepage": "https://github.com/kevin-leptons/trop_diary#readme",
   "dependencies": {
     "@trop/async_router": "^0.2.0",
-    "@trop/dflow": "^0.3.0",
-    "bcrypt": "^3.0.3",
+    "@trop/dflow": "^0.8.0",
+    "@trop/factory": "^0.1.1",
+    "@trop/gear": "^0.4.2",
+    "@trop/seed": "^0.2.0",
+    "bcrypt": "^3.0.6",
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
     "express": "^4.16.4",

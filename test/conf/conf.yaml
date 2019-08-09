@@ -1,0 +1,7 @@
+host: 0.0.0.0
+port: 6969
+private_key: private.pem
+storage:
+    endpoint: mongodb://ds245532.mlab.com:45532/trop_diary_api
+    username: root
+    password: one2345

@@ -4,7 +4,7 @@ const os = require('os')
 
 const yargs = require('yargs')
 
-const {App} = require('../lib')
+const {app} = require('../lib')
 
 yargs.
 usage('$0 <cmd> [args]').
@@ -39,9 +39,5 @@ function async_cli(async_fn) {
 }
 
 async function cli_start(conf) {
-    let app = new App({
-        conf_file: conf.confFile,
-        clean: conf.clean
-    })
-    await app.start()
+    await app.runWithConfigurationFile(conf.confFile)
 }

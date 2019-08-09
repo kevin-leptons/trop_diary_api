@@ -1,5 +1,0 @@
-{
-    "$id": "//atom/email",
-    "type": "string",
-    "format": "email"
-}

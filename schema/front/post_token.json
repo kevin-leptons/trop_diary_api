@@ -23,7 +23,7 @@
                         "grant_type": {
                             "enum": ["refresh_token"]
                         },
-                        "refresh_token": {"$ref": "//atom/uuidv4"}
+                        "refresh_token": {"$ref": "//atom/uuid"}
                     }
                 }
             ]
@@ -40,7 +40,7 @@
                 },
                 "expires_in": {"$ref": "//atom/uint"},
                 "access_token": {"$ref": "//atom/jwt"},
-                "refresh_token": {"$ref": "//atom/uuidv4"}
+                "refresh_token": {"$ref": "//atom/uuid"}
             }
         }
     }

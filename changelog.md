@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.14.0
+
+* Use `@trop/seed` to load configuration file
+* Use `@trop/factory` to initialize services
+* Change configuration file from `JSON` to `YAML` format
+* Change configuration attribute from `store` to `storage`
+
 ## v0.13.0
 
 * Enable and start service on Debian package is installed
