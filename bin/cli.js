@@ -39,5 +39,5 @@ function async_cli(async_fn) {
 }
 
 async function cli_start(conf) {
-    await app.runWithConfigurationFile(conf.confFile)
+    await app.run_with_configuration_file(conf.confFile)
 }

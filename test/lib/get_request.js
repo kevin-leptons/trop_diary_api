@@ -1,5 +1,7 @@
 const supertest = require('supertest')
 
+const get_app = require('./get_app')
+
 class Request {
     constructor(express_app) {
         this._supertest = supertest(express_app)
@@ -82,4 +84,13 @@ class Request {
     }
 }
 
-module.exports = Request
+let _request = undefined
+async function get_request() {
+    if (_request === undefined) {
+        let app = await get_app()
+        _request = new Request(app)
+    }
+    return _request
+}
+
+module.exports = get_request

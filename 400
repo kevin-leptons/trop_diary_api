@@ -1,0 +1,7 @@
+
+> @trop/diary_api@0.14.0 test /home/kevin/package/trop_diary_api
+> mocha --recursive --exit --timeout 0 test "-g" "api://front/post/token," "invalid" "atribute" "username" "="
+
+
+
+  api://front/post/token

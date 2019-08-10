@@ -1,95 +1,96 @@
 const assert = require('assert')
 
-const box = require('../box')
-const http_test = require('../http_test')
+const {
+    get_request,
+    get_schema_service,
+    http_assert,
+    global_value
+} = require('../lib')
 
-describe('post /account', () => {
+describe('api://front/post/account', () => {
     let req
-    let dflow
+    let schema_service = get_schema_service()
     let path = '/account'
 
     before(async () => {
-        req = await box.request()
-
-        let service = await box.service()
-        dflow = service.dflow
+        req = await get_request()
     })
 
-    it('req role=r', async () => {
+    it('api://front/post/account, role=r', async () => {
         let res = await req.post(path, {
             email: 'reader@mail.com',
             password: 'banana',
             role: 'r'
         })
 
-        await http_test(res, () => {
+        await http_assert(res, () => {
             assert.equal(res.status, 201)
-            dflow.raw_verify('//trop/front/post_account#/res/body', res.body)
+            schema_service.raw_verify('//trop/front/post_account#/res/body', res.body)
         })
     })
 
-    it('req role=w', async () => {
+    it('api://front/post/account, role=w', async () => {
         let res = await req.post(path, {
             email: 'writer@mail.com',
             password: 'banana',
             role: 'w'
         })
 
-        await http_test(res, () => {
+        await http_assert(res, () => {
             assert.equal(res.status, 201)
-            dflow.raw_verify('//trop/front/post_account#/res/body', res.body)
+            schema_service.raw_verify('//trop/front/post_account#/res/body', res.body)
         })
     })
 
-    it('req role=rw', async () => {
+    it('api://front/post/account, role=rw', async () => {
         let res = await req.post(path, {
             email: 'monitor@mail.com',
             password: 'banana',
             role: 'rw'
         })
 
-        await http_test(res, () => {
+        await http_assert(res, () => {
             assert.equal(res.status, 201)
-            dflow.raw_verify('//trop/front/post_account#/res/body', res.body)
+            schema_service.raw_verify('//trop/front/post_account#/res/body', res.body)
         })
     })
 
-    it('req role=root', async () => {
+    it('api://front/post/account, role=root', async () => {
         let res = await req.post(path, {
             email: 'god@mail.com',
             password: 'banana',
             role: 'root'
         })
 
-        await http_test(res, () => {
+        await http_assert(res, () => {
             assert.equal(res.status, 201)
-            dflow.raw_verify('//trop/front/post_account#/res/body', res.body)
+            schema_service.raw_verify('//trop/front/post_account#/res/body', res.body)
         })
     })
 
-    it('req role=invalid => error', async () => {
+    it('api://front/post/account, role=invalid => error', async () => {
         let res = await req.post(path, {
             email: 'reader@mail.com',
             password: 'banana',
             role: 'invalid'
         })
 
-        await http_test(res, () => {
+        await http_assert(res, () => {
             assert.equal(res.status, 400)
-            dflow.raw_verify('//trop/front/http_4xx#/res/body', res.body)
+            schema_service.raw_verify('//trop/front/http_4xx#/res/body', res.body)
         })
     })
 
-    it('req => error duplicated', async () => {
+    it('api://front/post/account, error duplicated', async () => {
         let res = await req.post(path, {
             email: 'reader@mail.com',
             password: 'banana',
             role: 'r'
         })
 
-        await http_test(res, () => {
+        await http_assert(res, () => {
             assert.equal(res.status, 409)
-            dflow.raw_verify('//trop/front/http_4xx#/res/body', res.body)
+            schema_service.raw_verify('//trop/front/http_4xx#/res/body', res.body)
         })
     })
 })

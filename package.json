@@ -6,7 +6,7 @@
     "trop-diary-api": "bin/cli.js"
   },
   "scripts": {
-    "test": "mocha --recursive test/",
+    "test": "mocha --recursive --exit --timeout 0 test",
     "start": "node bin/cli.js start --conf-file test/conf/conf.yaml"
   },
   "repository": {

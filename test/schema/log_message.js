@@ -1,25 +1,21 @@
 const assert = require('assert')
 
-const box = require('../box')
+const {Schema} = require('../../lib/service')
+const {get_schema_service} = require('../lib')
 
 describe('schema://atom/log_message', () => {
     let schema = '//atom/log_message'
-    let dflow
-
-    before(async () => {
-        let service = await box.service()
-        dflow = service.dflow
-    })
+    let schema_service = get_schema_service()
 
     it('verify(1)', async () => {
-        dflow.raw_verify(schema, 1)
+        schema_service.raw_verify(schema, 1)
     })
 
     it('verify(one)', async () => {
-        dflow.raw_verify(schema, 'one')
+        schema_service.raw_verify(schema, 'one')
     })
 
     it('verify({})', async () => {
-        dflow.raw_verify(schema, {})
+        schema_service.raw_verify(schema, {})
     })
 })

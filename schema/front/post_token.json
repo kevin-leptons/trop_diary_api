@@ -9,7 +9,8 @@
                     "required": ["grant_type", "username", "password"],
                     "properties": {
                         "grant_type": {
-                            "enum": ["password"]
+                            "type": "string",
+                            "const": "password"
                         },
                         "username": {"$ref": "//atom/email"},
                         "password": {"$ref": "//atom/password"}
@@ -21,7 +22,8 @@
                     "required": ["grant_type", "refresh_token"],
                     "properties": {
                         "grant_type": {
-                            "enum": ["refresh_token"]
+                            "type": "string",
+                            "const": "refresh_token"
                         },
                         "refresh_token": {"$ref": "//atom/uuid"}
                     }

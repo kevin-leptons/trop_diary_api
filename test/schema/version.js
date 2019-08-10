@@ -1,36 +1,32 @@
 const assert = require('assert')
 
-const box = require('../box')
+const {Schema} = require('../../lib/service')
+const {get_schema_service} = require('../lib')
 const {InvalidData} = require('../../lib/error')
 
 describe('schema://atom/version', () => {
     let schema = '//atom/version'
-    let dflow
-
-    before(async () => {
-        let service = await box.service()
-        dflow = service.dflow
-    })
+    let schema_service = get_schema_service()
 
     it('verify(3)', async () => {
-        dflow.raw_verify(schema, '3')
+        schema_service.raw_verify(schema, '3')
     })
 
     it('verify(3.2)', async () => {
-        dflow.raw_verify(schema, '3.2')
+        schema_service.raw_verify(schema, '3.2')
     })
 
     it('verify(3.2.1)', async () => {
-        dflow.raw_verify(schema, '3.2.1')
+        schema_service.raw_verify(schema, '3.2.1')
     })
 
     it('verify(3.2.1.0)', async () => {
-        dflow.raw_verify(schema, '3.2.1.0')
+        schema_service.raw_verify(schema, '3.2.1.0')
     })
 
     it('verify(3.2.1.0.9) => error', async () => {
         assert.throws(() => {
-            dflow.raw_verify(schema, '3.2.1.0.9')
+            schema_service.raw_verify(schema, '3.2.1.0.9')
         }, InvalidData)
     })
 })

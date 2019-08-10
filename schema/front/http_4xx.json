@@ -4,10 +4,11 @@
         "body": {
             "type": "object",
             "additionalProperties": false,
-            "required": ["log_id", "error"],
+            "required": ["log_id", "message"],
             "properties": {
                 "log_id": {"$ref": "//atom/log_id"},
-                "error": {}
+                "message": {},
+                "data": {}
             }
         }
     }

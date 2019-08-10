@@ -1,19 +1,17 @@
 const assert = require('assert')
-
 const uuid = require('uuid-mongodb')
 
-const box = require('../box')
+const {get_request, get_schema_service} = require('../lib')
 
-describe('io data', () => {
+describe('api://front', () => {
     let req
-    let dflow
+    let schema_service
 
     before(async () => {
-        let http_req = await box.request()
+        let http_req = await get_request()
         req = http_req.raw
 
-        let service = await box.service()
-        dflow = service.dflow
+        schema_service = get_schema_service()
     })
 
     it('post /message, content-type=text  => 415', async () => {
@@ -21,7 +19,7 @@ describe('io data', () => {
         set('content-type', 'text').
         expect(415)
 
-        dflow.verify('//trop/front/http_4xx#/res/body', res.body)
+        schema_service.verify('//trop/front/http_4xx#/res/body', res.body)
     })
 
     it('post /message, accept=text => 406', async () => {
@@ -30,7 +28,7 @@ describe('io data', () => {
         set('accept', 'text').
         expect(406)
 
-        dflow.verify('//trop/front/http_4xx#/res/body', res.body)
+        schema_service.verify('//trop/front/http_4xx#/res/body', res.body)
     })
 
     it('get /does_not_exists_resource => 404', async () => {
@@ -38,6 +36,6 @@ describe('io data', () => {
         let res = await req.get('/' + path).
         expect(404)
 
-        dflow.verify('//trop/front/http_4xx#/res/body', res.body)
+        schema_service.verify('//trop/front/http_4xx#/res/body', res.body)
     })
 })
