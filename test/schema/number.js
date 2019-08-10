@@ -11,28 +11,28 @@ describe('schema://atom/number', () => {
     let schema_service = get_schema_service()
     
     it('verify_int(100)', async () => {
-        schema_service.raw_verify(schema_int, 100)
+        schema_service.verify(schema_int, 100)
     })
 
     it('verify_int(100.1) => error', async () => {
         assert.throws(() => {
-            schema_service.raw_verify(schema_int, 100.1)
+            schema_service.verify(schema_int, 100.1)
         }, InvalidData)
     })
 
     it('verify_uint(100)', async () => {
-        schema_service.raw_verify(schema_uint, 100)
+        schema_service.verify(schema_uint, 100)
     })
 
     it('verify_uint(-100) => error', async () => {
         assert.throws(() => {
-            schema_service.raw_verify(schema_uint, -100)
+            schema_service.verify(schema_uint, -100)
         }, InvalidData)
     })
 
     it('verify_uint(100.1) => error', async () => {
         assert.throws(() => {
-            schema_service.raw_verify(schema_uint, 100.1)
+            schema_service.verify(schema_uint, 100.1)
         }, InvalidData)
     })
 })

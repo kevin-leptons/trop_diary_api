@@ -1,6 +1,9 @@
 {
     "$id": "//trop/front/http_204",
     "res": {
+        "status": {
+            "$ref": "//atom/http/204"
+        },
         "body": {
             "type": "object",
             "additionalProperties": false,

@@ -1,6 +1,9 @@
 {
     "$id": "//trop/front/get_root",
     "res": {
+        "status": {
+            "$ref": "//atom/http/200"
+        },
         "body": {
             "type": "object",
             "additionalProperties": false,

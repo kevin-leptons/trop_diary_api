@@ -11,6 +11,9 @@
         }
     },
     "res": {
+        "status": {
+            "$ref": "//atom/http/200"
+        },
         "body": {
             "type": "array",
             "items": {

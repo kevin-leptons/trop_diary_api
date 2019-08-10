@@ -32,6 +32,9 @@
         }
     },
     "res": {
+        "status": {
+            "$ref": "//atom/http/201"
+        },
         "body": {
             "type": "object",
             "additionalProperties": false,

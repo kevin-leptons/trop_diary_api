@@ -8,14 +8,14 @@ describe('schema://atom/log_message', () => {
     let schema_service = get_schema_service()
 
     it('verify(1)', async () => {
-        schema_service.raw_verify(schema, 1)
+        schema_service.verify(schema, 1)
     })
 
     it('verify(one)', async () => {
-        schema_service.raw_verify(schema, 'one')
+        schema_service.verify(schema, 'one')
     })
 
     it('verify({})', async () => {
-        schema_service.raw_verify(schema, {})
+        schema_service.verify(schema, {})
     })
 })

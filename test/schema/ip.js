@@ -9,16 +9,16 @@ describe('schema://atom/ip', () => {
     let schema_service = get_schema_service()
 
     it('verify(ipv4)', async () => {
-        schema_service.raw_verify(schema, '192.168.1.1')
+        schema_service.verify(schema, '192.168.1.1')
     })
 
     it('verify(ipv6)', async () => {
-        schema_service.raw_verify(schema, '2001:db8:1234:0000:0000:0000:0000:0000')
+        schema_service.verify(schema, '2001:db8:1234:0000:0000:0000:0000:0000')
     })
 
     it('verify() => error', async () => {
         assert.throws(() => {
-            schema_service.raw_verify(schema, 'This is not IP Address')
+            schema_service.verify(schema, 'This is not IP Address')
         }, InvalidData)
     })
 })

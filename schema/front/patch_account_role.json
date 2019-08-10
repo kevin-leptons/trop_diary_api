@@ -10,5 +10,10 @@
                 "role": {"$ref": "//atom/account_role"}
             }
         }
+    },
+    "res": {
+        "status": {
+            "$ref": "//atom/http/204"
+        }
     }
 }

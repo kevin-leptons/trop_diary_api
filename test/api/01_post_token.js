@@ -9,7 +9,7 @@ const {
     global_value
 } = require('../lib')
 
-describe('api://front/post/token', () => {
+describe('api://post/token', () => {
     let req
     let schema_service = get_schema_service()
     let path = '/token'
@@ -18,7 +18,7 @@ describe('api://front/post/token', () => {
         req = await get_request()
     })
 
-    it('api://front/post/token#password', async () => {
+    it('api://post/token#password', async () => {
         let res = await req.post(path, {
             grant_type: 'password',
             username: 'root@mail.com',
@@ -26,11 +26,10 @@ describe('api://front/post/token', () => {
         })
 
         await http_assert(res, () => {
-            assert.equal(res.status, 200)
-            schema_service.raw_verify('//trop/front/post_token#/res/body', res.body)
+            schema_service.verify_response('//trop/front/post_token', res)
 
             let access_token = jwt.decode(res.body.access_token)
-            schema_service.raw_verify('//trop/front/access_token', access_token)
+            schema_service.verify('//trop/front/access_token', access_token)
 
             req.set_token(res.body.access_token)
             global_value.set('token', res.body)
@@ -38,7 +37,7 @@ describe('api://front/post/token', () => {
         })
     })
 
-    it('api://front/post/token#refresh_token', async () => {
+    it('api://post/token#refresh_token', async () => {
         let old_token = global_value.get('token')
         let res = await req.post(path, {
             grant_type: 'refresh_token',
@@ -46,11 +45,10 @@ describe('api://front/post/token', () => {
         })
 
         await http_assert(res, () => {
-            assert.equal(res.status, 200)
-            schema_service.raw_verify('//trop/front/post_token#/res/body', res.body)
+            schema_service.verify_response('//trop/front/post_token', res)
 
             let access_token = jwt.decode(res.body.access_token)
-            schema_service.raw_verify('//trop/front/access_token', access_token)
+            schema_service.verify('//trop/front/access_token', access_token)
 
             let old_access_token = global_value.get('access_token')
             assert.equal(access_token.role, old_access_token.role)
@@ -60,40 +58,38 @@ describe('api://front/post/token', () => {
         })
     })
 
-    it('api://front/post/token, grant_type=invalid => 400', async () => {
+    it('api://post/token, grant_type=invalid => 400', async () => {
         let res = await req.post(path, {
             grant_type: 'invalid'
         })
 
         await http_assert(res, () => {
-            schema_service.raw_verify('//trop/front/http_4xx#/res/body', res.body)
+            schema_service.verify_response('//trop/front/http_400', res)
         })
     })
 
-    it('api://front/post/token, invalid_attirbute=invalid => 400', async () => {
+    it('api://post/token, invalid_attirbute=invalid => 400', async () => {
         let res = await req.post(path, {
             invalid_attribute: 'invalid'
         })
 
         await http_assert(res, () => {
-            assert.equal(res.status, 400)
-            schema_service.raw_verify('//trop/front/http_4xx#/res/body', res.body)
+            schema_service.verify_response('//trop/front/http_400', res)
         })
     })
 
-    it('api://front/post/token#password, invalid atribute username => 400', async () => {
+    it('api://post/token#password, invalid atribute username => 400', async () => {
         let res = await req.post(path, {
             grant_type: 'password',
             username: 'root@mail.com'
         })
 
         await http_assert(res, () => {
-            assert.equal(res.status, 400)
-            schema_service.raw_verify('//trop/front/http_4xx#/res/body', res.body)
+            schema_service.verify_response('//trop/front/http_400', res)
         })
     })
 
-    it('api://front/post/token#password, invalid username => 401', async () => {
+    it('api://post/token#password, invalid username => 401', async () => {
         let res = await req.post(path, {
             grant_type: 'password',
             username: 'invalid@mail.com',
@@ -101,12 +97,11 @@ describe('api://front/post/token', () => {
         })
 
         await http_assert(res, () => {
-            assert.equal(res.status, 401)
-            schema_service.raw_verify('//trop/front/http_4xx#/res/body', res.body)
+            schema_service.verify_response('//trop/front/http_401', res)
         })
     })
 
-    it('api://front/post/token#password, invalid password => 401', async () => {
+    it('api://post/token#password, invalid password => 401', async () => {
         let res = await req.post(path, {
             grant_type: 'password',
             username: 'root@mail.com',
@@ -114,32 +109,29 @@ describe('api://front/post/token', () => {
         })
 
         await http_assert(res, () => {
-            assert.equal(res.status, 401)
-            schema_service.raw_verify('//trop/front/http_4xx#/res/body', res.body)
+            schema_service.verify_response('//trop/front/http_401', res)
         })
     })
 
-    it('api://front/post/token#refresh_token, invalid atribute refresh_token => 400', async () => {
+    it('api://post/token#refresh_token, invalid refresh_token => 401', async () => {
         let res = await req.post(path, {
             grant_type: 'refresh_token',
             refresh_token: uuidv4()
         })
 
         await http_assert(res, () => {
-            assert.equal(res.status, 401)
-            schema_service.raw_verify('//trop/front/http_4xx#/res/body', res.body)
+            schema_service.verify_response('//trop/front/http_401', res)
         })
     })
 
-    it('api://front/post/token#refresh_token, invalid refresh_token => 401', async () => {
+    it('api://post/token#refresh_token, invalid refresh_token => 401', async () => {
         let res = await req.post(path, {
             grant_type: 'refresh_token',
             refresh_token: uuidv4()
         })
 
         await http_assert(res, () => {
-            assert.equal(res.status, 401)
-            schema_service.raw_verify('//trop/front/http_4xx#/res/body', res.body)
+            schema_service.verify_response('//trop/front/http_401', res)
         })
     })
 })

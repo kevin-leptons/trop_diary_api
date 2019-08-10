@@ -9,22 +9,22 @@ describe('schema://atom/name#/restrict', () => {
     let schema_service = get_schema_service()
 
     it('verify(mr_bean)', async () => {
-        schema_service.raw_verify(schema, 'mr_bean')
+        schema_service.verify(schema, 'mr_bean')
     })
 
     it('verify(mr_bean_001)', async () => {
-        schema_service.raw_verify(schema, 'mr_bean_001')
+        schema_service.verify(schema, 'mr_bean_001')
     })
 
     it('verify(mr bean) => error', async () => {
         assert.throws(() => {
-            schema_service.raw_verify(schema, 'mr bean')
+            schema_service.verify(schema, 'mr bean')
         }, InvalidData)
     })
 
     it('verify(Mr.Bean) => error', async () => {
         assert.throws(() => {
-            schema_service.raw_verify(schema, 'Mr.Bean')
+            schema_service.verify(schema, 'Mr.Bean')
         }, InvalidData)
     })
 })

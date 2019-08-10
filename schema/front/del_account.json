@@ -9,5 +9,10 @@
                 "username": {"$ref": "//atom/email"}
             }
         }
+    },
+    "res": {
+        "status": {
+            "$ref": "//atom/http/204"
+        }
     }
 }

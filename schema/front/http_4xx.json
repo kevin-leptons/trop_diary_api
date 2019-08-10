@@ -1,15 +1,89 @@
-{
-    "$id": "//trop/front/http_4xx",
-    "res": {
-        "body": {
-            "type": "object",
-            "additionalProperties": false,
-            "required": ["log_id", "message"],
-            "properties": {
-                "log_id": {"$ref": "//atom/log_id"},
-                "message": {},
-                "data": {}
+[    {
+        "$id": "//trop/front/http_4xx_body",
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["log_id", "message"],
+        "properties": {
+            "log_id": {"$ref": "//atom/log_id"},
+            "message": {},
+            "data": {}
+        }
+    },
+    {
+        "$id": "//trop/front/http_400",
+        "res": {
+            "status": {
+                "$ref": "//atom/http/400"
+            },
+            "body": {
+                "$ref": "//trop/front/http_4xx_body"
+            }
+        }
+    },
+    {
+        "$id": "//trop/front/http_401",
+        "res": {
+            "status": {
+                "$ref": "//atom/http/401"
+            },
+            "body": {
+                "$ref": "//trop/front/http_4xx_body"
+            }
+        }
+    },
+    {
+        "$id": "//trop/front/http_403",
+        "res": {
+            "status": {
+                "$ref": "//atom/http/403"
+            },
+            "body": {
+                "$ref": "//trop/front/http_4xx_body"
+            }
+        }
+    },
+    {
+        "$id": "//trop/front/http_404",
+        "res": {
+            "status": {
+                "$ref": "//atom/http/404"
+            },
+            "body": {
+                "$ref": "//trop/front/http_4xx_body"
+            }
+        }
+    },
+    {
+        "$id": "//trop/front/http_406",
+        "res": {
+            "status": {
+                "$ref": "//atom/http/406"
+            },
+            "body": {
+                "$ref": "//trop/front/http_4xx_body"
+            }
+        }
+    },
+    {
+        "$id": "//trop/front/http_409",
+        "res": {
+            "status": {
+                "$ref": "//atom/http/409"
+            },
+            "body": {
+                "$ref": "//trop/front/http_4xx_body"
+            }
+        }
+    },
+    {
+        "$id": "//trop/front/http_415",
+        "res": {
+            "status": {
+                "$ref": "//atom/http/415"
+            },
+            "body": {
+                "$ref": "//trop/front/http_4xx_body"
             }
         }
     }
-}
+]
