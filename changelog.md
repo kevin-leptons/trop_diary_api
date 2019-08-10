@@ -6,6 +6,7 @@
 * Use `@trop/factory` to initialize services
 * Change configuration file from `JSON` to `YAML` format
 * Change configuration attribute from `store` to `storage`
+* Change API `GET /message` return newest message order
 
 ## v0.13.0
 
