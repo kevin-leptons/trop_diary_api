@@ -2,12 +2,13 @@
 
 ## v0.14.0
 
-* Use `@trop/seed` to load configuration file
-* Use `@trop/factory` to initialize services
 * Change configuration file from `JSON` to `YAML` format
 * Change configuration attribute from `store` to `storage`
 * Change API `GET /message` return newest message order
 * Change message envelope, attribute `message` rename to `data`
+* Change from Node.js v10 to v12
+* Use `@trop/seed` to load configuration file
+* Use `@trop/factory` to initialize services
 
 ## v0.13.0
 

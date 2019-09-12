@@ -14,7 +14,7 @@ command('start', 'Online', (yargs) => {
     option('conf-file', {
         describe: 'Path to configuration file',
         type: 'string',
-        default: '/etc/trop_diary_api/conf.json'
+        default: '/etc/trop_diary_api/conf.yaml'
     }).
     option('clean', {
         describe: 'Clear all data',
