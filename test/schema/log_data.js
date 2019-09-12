@@ -3,8 +3,8 @@ const assert = require('assert')
 const {Schema} = require('../../lib/service')
 const {get_schema_service} = require('../lib')
 
-describe('schema://atom/log_message', () => {
-    let schema = '//atom/log_message'
+describe('schema://atom/log_data', () => {
+    let schema = '//atom/log_data'
     let schema_service = get_schema_service()
 
     it('verify(1)', async () => {

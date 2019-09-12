@@ -6,7 +6,9 @@
             "additionalProperties": false,
             "required": ["id"],
             "properties": {
-                "id": {"$ref": "//atom/log_id"}
+                "id": {
+                    "$ref": "//atom/log_id"
+                }
             }
         }
     },
@@ -22,15 +24,27 @@
                 "ip",
                 "created",
                 "level",
-                "message"
+                "data"
             ],
             "properties": {
-                "_id": {"$ref": "//atom/log_id"},
-                "ip": {"$ref": "//atom/ip"},
-                "created": {"$ref": "//atom/timestamp"},
-                "level": {"$ref": "//atom/log_level"},
-                "label": {"$ref": "//atom/log_label"},
-                "message": {"$ref": "//atom/log_message"}
+                "_id": {
+                    "$ref": "//atom/log_id"
+                },
+                "ip": {
+                    "$ref": "//atom/ip"
+                },
+                "created": {
+                    "$ref": "//atom/timestamp"
+                },
+                "level": {
+                    "$ref": "//atom/log_level"
+                },
+                "label": {
+                    "$ref": "//atom/log_label"
+                },
+                "data": {
+                    "$ref": "//atom/log_data"
+                }
             }
         }
     }

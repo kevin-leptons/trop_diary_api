@@ -4,11 +4,20 @@
         "body": {
             "type": "object",
             "additionalProperties": false,
-            "required": ["level", "message"],
+            "required": [
+                "level",
+                "data"
+            ],
             "properties": {
-                "level": {"$ref": "//atom/log_level"},
-                "label": {"$ref": "//atom/log_label"},
-                "message": {"$ref": "//atom/log_message"}
+                "level": {
+                    "$ref": "//atom/log_level"
+                },
+                "label": {
+                    "$ref": "//atom/log_label"
+                },
+                "data": {
+                    "$ref": "//atom/log_data"
+                }
             }
         }
     },
@@ -21,7 +30,9 @@
             "additionalProperties": false,
             "required": ["_id"],
             "properties": {
-                "_id": {"$ref": "//atom/log_id"}
+                "_id": {
+                    "$ref": "//atom/log_id"
+                }
             }
         }
     }
