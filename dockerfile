@@ -1,5 +1,7 @@
 FROM node:10
 
+ENV NODE_ENV production
+
 WORKDIR /opt/trop_diary_api
 COPY . .
 
